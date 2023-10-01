@@ -1,0 +1,178 @@
+
+;------------------------------------------------------------------------------
+
+L1:	.PRMSG	#TEXT1
+	.WTKEY
+;
+L2:	.PRMSG	#TEXT2
+	.WTKEY
+;
+L3:	.PRMSG	#TEXT3
+	.WTKEY
+;
+L4:	.PRMSG	#TEXT4
+	.WTKEY
+;
+L5:	.PRMSG	#TEXT5
+	.WTKEY
+;
+L6:	.PRMSG	#TEXT6
+	.WTKEY
+;
+L7:	.PRMSG	#TEXT7
+	.WTKEY
+;
+L8:	.PRMSG	#TEXT8
+	.WTKEY
+;
+L9:	.PRMSG	#TEXT9
+	.WTKEY
+;
+L10:	.PRMSG	#TEXT10
+	.WTKEY
+;
+L11:	.PRMSG	#TEXT11
+	.WTKEY
+;
+L12:	.PRMSG	#TEXT12
+	.WTKEY
+;
+L13:	.PRMSG	#TEXT13
+	.WTKEY
+;
+L14:	.PRMSG	#TEXT14
+	.WTKEY
+;
+L15:	.PRMSG	#TEXT15
+	.WTKEY
+;
+L16:	.PRMSG	#TEXT16
+	.WTKEY
+;
+L17:	.PRMSG	#TEXT17
+	.WTKEY
+;
+L18:	.PRMSG	#TEXT18
+	.WTKEY
+;
+L19:	.PRMSG	#TEXT19
+	.WTKEY
+;
+
+;------------------------------------------------------------------------------
+
+TEXT0:	.ASCII	/Мне нужно найти место, которое имеет/<25>
+	.ASCII	/четыре лучшие характеристики из/<25>
+	.ASCIZ	/следующих:/
+TEXT1:	.ASCII	/ 1: Близко к пляжу./<25>
+	.ASCII	/ 2: Вид на море./<25>
+	.ASCII	/ 3: На солнечной стороне./<25>
+	.ASCII	/ 4: Рядом с пресной водой./<25>
+	.ASCII	/ 5: В укрытии от солнца./<25>
+	.ASCII	/ 6: На высоком месте./<25>
+	.ASCIZ	/ 7: В углублении./
+TEXT2:	.ASCII	/Я нашел ровный участок земли,/<25>
+	.ASCII	/расположенный у подножия высокого холма,/<25>
+	.ASCIZ	/с камнем, напоминающим вход в пещеру./
+TEXT3:	.ASCII	/Мне оставалось:/<25>
+	.ASCII	/ 1: Перенести свои сокровища./<25>
+	.ASCII	/ 2: Установить палатку./
+	.ASCIZ	/ 3: Построить ограду./
+TEXT4:	.ASCIZ	/Я перенес свои сокровища на плато./
+TEXT5:	.ASCIZ	/Я установил хрупкую палатку из ткани./
+TEXT6:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT7:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT8:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT9:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT10:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT11:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT12:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT13:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT14:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT15:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT16:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT17:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT18:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT19:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT20:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT21:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT22:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT23:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT24:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT25:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT26:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT27:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT28:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT29:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT30:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT31:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT32:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT33:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT34:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT35:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT36:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT37:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT38:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT39:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT40:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT41:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT42:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT43:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT44:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT45:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT46:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT47:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT48:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT49:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT50:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT51:	.ASCII	//<25>
+	.ASCIZ	//
+TEXT52:	.ASCII	//<25>
+	.ASCIZ	//
+
+;------------------------------------------------------------------------------

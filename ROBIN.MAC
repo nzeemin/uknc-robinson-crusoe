@@ -1,0 +1,511 @@
+	.TITLE	ROBIN
+	.MCALL	.SETTOP, .EXIT, .LOOKUP, .READW, .CLOSE
+
+.MACRO	PUSH	RR
+	MOV	RR,-(SP)
+.ENDM
+.MACRO	POP	RR
+	MOV	(SP)+,RR
+.ENDM
+
+;------------------------------------------------------------------------------
+
+	.ASECT
+	.=001000
+START::
+	CLR	@#177560
+	MOV	#1000, SP	; Ставим стек
+; Определяем верхнюю границу памяти
+	.SETTOP	#117776
+	CMP	#117776, R0
+	BHIS	1$
+	MOV	#MEMERR, R1
+	JMP	FERROR
+1$:
+;TODO: Проверить, что памяти достаточно
+
+; Открываем файл данных
+	.LOOKUP	#FAREA, #0, #FSPEC
+	BCC	10$
+	MOV	#FERR, R1
+	JMP	FERROR
+10$:
+; Отправить программу в ПП
+	CALL	PPLOAD		; Установить программу в памяти ПП
+
+; Сюда возвращаемся после завершения игры
+TITLE:
+; Очистить экран и задать режим
+	MOV	#GAMESC, R1	; Строка для подготовки игрового экрана
+	CALL	PRINT
+; Загрузка заголовочного экрана
+	CLR	IOBLK			; Номер блока = 0
+	MOV	#<8192./2>, WCNT	; Сколько слов прочитать
+	MOV	#AREA, R5
+	.READW	R5, #0
+	BCC	30$
+	MOV	#FERR, R1
+	JMP	FERROR
+30$:
+; Распаковать заголовочный экран на адреса 052400-120000, занимает 19200. = 045400 байт
+	MOV	#LBEGIN, R1
+	MOV	#052400, R2
+	CALL	UNLZSA
+; Показать заголовочный экран через вызов процедуры в ПП
+	CALL	PPRUN
+	CALL	PAUSE
+; Показ главного меню
+	MOV	#MENUSC, R1
+	CALL	PRINT
+40$:	CALL	WTKEY
+	CMP	#060, R0
+	BEQ	FINISH
+	CMP	#061, R0
+	BNE	40$
+; Начало игры
+STARTG:
+;TODO: Сброс переменных игры
+; Выводим начальный текст
+	MOV	#TEXTPR, R1
+	CALL	PRINT
+	CALL	WTKEY
+; Очистить экран
+	MOV	#GAMESC, R1
+	CALL	PRINT
+	CALL	PAUSE
+; Загрузить уровень 1
+	MOV	#LEVELS, R0
+	JMP	LOALEV
+; Обычное завершение программы
+FINISH:
+	MOV	#EXITSC, R1	; Строка очистки экрана перед выходом
+; Точка входа: напечатать ошибку и завершиться
+FERROR:	CALL	PRINT
+	.CLOSE	#0		; Закрываем файл
+	CALL	PPDONE		; Освободить память в ПП
+	.EXIT
+
+; Процедура загрузки уровня; R0 = описатель уровня в таблице LEVELS
+LOALEV:
+; Загрузка сжатого экрана
+	MOV	(R0)+, IOBLK	; Номер блока
+	MOV	(R0)+, WCNT	; Сколько слов прочитать
+	PUSH	R0
+	MOV	#AREA, R5
+	.READW	R5, #0
+	BCC	10$
+	MOV	#FERR, R1
+	JMP	FERROR
+10$:
+; Распаковать экран на адреса 052400-120000, занимает 19200. = 045400 байт
+	MOV	#LBEGIN, R1
+	MOV	#052400, R2
+	CALL	UNLZSA
+; Показать экран через вызов процедуры в ПП
+	CALL	PPRUN
+	CALL	PAUSE
+; Загрузить сжатые вставки
+	POP	R0
+	MOV	(R0)+, IOBLK	; Номер блока
+	MOV	(R0)+, WCNT	; Сколько слов прочитать
+	PUSH	R0
+	MOV	#AREA, R5
+	.READW	R5, #0
+	BCC	20$
+	MOV	#FERR, R1
+	JMP	FERROR
+20$:
+; Распаковать сжатые вставки
+	MOV	#LBEGIN, R1
+	MOV	#052400, R2
+	CALL	UNLZSA
+;TODO: Приготовить вставки под экраном
+
+; Загрузить код + текст
+	POP	R0
+	MOV	(R0)+, IOBLK	; Номер блока
+	MOV	(R0)+, WCNT	; Сколько слов прочитать
+	MOV	#AREA, R5
+	.READW	R5, #0
+	BCC	30$
+	MOV	#FERR, R1
+	JMP	FERROR
+30$:
+; Переход на код уровня
+	JMP	LBEGIN
+
+FAREA:	.BLKW	3
+FSPEC:	.RAD50	/DK ROBIN DAT/	; Имя файла с данными
+AREA:	.WORD	0
+IOBLK:	.WORD	0		; С какого блока читать
+	.WORD	LBEGIN		; Адрес куда читать данные
+WCNT:	.WORD	256.		; Сколько слов читать
+	.WORD	0
+
+MEMERR:	.ASCIZ	/Недостаточно памяти/
+FERR:	.ASCIZ	/Ошибка чтения ROBIN.DAT/
+GAMESC:	; Строка подготовки игрового экрана
+	.BYTE	033,246,62	; Формат экрана 40x24
+	.BYTE	033,240,67	; Цвет символа
+	.BYTE	033,241,60	; Цвет знакоместа 0
+	.BYTE	033,242,60	; Цвет фона 0
+	.BYTE	14		; Clear screen
+	.BYTE	0
+EXITSC:	; Строка очистки экрана перед выходом
+	.BYTE	033,246,061	; Формат экрана 80x24
+	.BYTE	033,240,67	; Цвет символа
+	.BYTE	033,241,61	; Цвет знакоместа 1
+	.BYTE	033,242,61	; Цвет фона 1
+	.BYTE	14		; Очистить экран
+	.BYTE	0
+MENUSC: ; Текст меню
+	.BYTE	033,240,61	; Цвет символа
+	.BYTE	033,131,41,66	; Курсор в позицию
+.INCLUDE /VERSIO.MAC/
+	.BYTE	033,240,67	; Цвет символа
+	.BYTE	033,131,40,53	; Курсор в позицию
+	.ASCII	/РОБИНЗОН КРУЗО/
+	.BYTE	033,131,43,54	; Курсор в позицию
+	.ASCII	/1. НОВАЯ ИГРА/
+	.BYTE	033,131,44,54	; Курсор в позицию
+	.ASCII	/0. ВЫХОД/
+	.BYTE	0
+
+; Текст прелюдии перед началом игры
+TEXTPR:	.BYTE	14		; Очистить экран
+	.BYTE	033,131,41,51	; Курсор в позицию
+	.BYTE	033,240,63	; Цвет символа
+	.ASCII	/30 СЕНТЯБРЯ 1659 ГОДА/<15><12><12><12>
+	.BYTE	033,240,67	; Цвет символа
+	.ASCII	/... "Мы увидели яростную волну, похожую/<25><12>
+	.ASCII	/ на гору... она опрокинула нашу шлюпку/<25><12>
+	.ASCII	/ и отделила нас друг от друга, а также/<25><12>
+	.ASCII	/ от лодки. В одно мгновение мы все были/<25><12>
+	.ASCII	/ поглощены." .../<25><12>
+	.ASCII	/ "Но я пришел в себя и смог, наконец,/<125><12>
+	.ASCII	/ добраться до берега."/
+	.BYTE	033,131,62,106	; Курсор в позицию
+	.BYTE	224		; символ "перевод строки"
+	.BYTE	0
+; Очистка области сообщений (7 строк)
+CLMSG:
+	.BYTE	033,131,40,40	; Курсор в позицию 0,0
+	.BYTE	013,012		; Очистка конца строки, шаг вниз
+	.BYTE	013,012
+	.BYTE	013,012
+	.BYTE	013,012
+	.BYTE	013,012
+	.BYTE	013,012
+	.BYTE	013		; Очистка конца строки
+	.BYTE	033,131,40,40	; Курсор в позицию 0,0
+	.BYTE	0
+; Ставим курсор справа внизу блока сообщений, показывая, что мы ждём нажатия
+WTKEYT:
+	.BYTE	033,131,46,106	; Курсор в позицию
+	.BYTE	224		; символ "перевод строки"
+	.BYTE	0
+; Ставим курсор слева внизу блока сообщений, показывая, что мы ждём выбора из вариантов
+WTSELT:
+	.BYTE	033,131,46,41	; Курсор в позицию
+	;.ASCII	/?/
+	.BYTE	0
+	.EVEN
+
+; Таблица уровней, используется при загрузке уровня
+.INCLUDE /LEVELS.MAC/
+
+; Подпрограмма загрузки программы в память ПП
+PPLOAD:
+	MOVB	#1, PPBCMD		; Команда "Выделить память"
+	CALL	PPSEND			; Отправляем блок параметров
+;TODO: Анализировать код ошибки по адресу PPBLCK
+	MOVB	#20, PPBCMD		; Команда "Запись"
+	MOV	#STARTPP, PPBACP	; Адрес блока в ОЗУ ЦП
+	CALL	PPSEND			; Отправляем блок параметров
+	RETURN
+; Подпрограмма запуска программы в памяти ПП
+PPRUN:
+	MOVB	#30, PPBCMD		; Команда "Запуск"
+	MOV	#STARTPP, PPBACP	; Адрес блока в ОЗУ ЦП
+	CALL	PPSEND			; Отправляем блок параметров
+;TODO: Анализировать код ошибки по адресу PPBLCK
+	RETURN
+; Подпрограмма освобождения памяти ПП
+PPDONE:
+	MOVB	#2, PPBCMD		; Команда "Освободить память"
+	MOV	#STARTPP, PPBACP	; Адрес блока в ОЗУ ЦП
+	CALL	PPSEND			; Отправляем блок параметров
+	RETURN
+
+; Массив параметров для управлением программой в памяти ПП
+PPBLCK:	.BYTE	0		; В этом байте будет содержаться код ошибки или 0
+PPBCMD:	.BYTE	0		; Команда (01-ВЫДЕЛИТЬ ПАМЯТЬ, 02-ОСВОБОДИТЬ ПАМЯТЬ 10-ЧТЕНИЕ, 20-ЗАПИСЬ, 30-ПУСК)
+	.WORD	32		; Устройство -- периферийный процессор
+PPBAPP:	.WORD	0		; Адрес ОЗУ ПП
+PPBACP:	.WORD	0		; Адрес ОЗУ ЦП
+	.WORD	<ENDPP-STARTPP>	; Длина программы в словах
+PPBADR:	.WORD	PPBLCK		; Слово всегда содержит начальный адрес массива параметров
+	.WORD	401		; Стоповый элемент (используется при передаче)
+
+; Подпрограмма передачи по каналу К2 массива параметров в ПП
+PPSEND:	MOV	#PPBADR, R0
+	MOV	#5, R1
+	BR	1$
+2$:	MOVB	(R0)+, @#176676
+1$:	TSTB	@#176674
+	BPL	1$
+	SOB	R1, 2$
+	RETURN
+
+; Подпрограмма для выполнения в памяти ПП; код должен быть перемещаемым!
+STARTPP:
+	MOV	#025200, R4	; Адрес откуда берём данные = 052400 в памяти ЦП
+	MOV	#<100000+<80.*80.>>, R3	; адрес на экране, начало картинки
+	MOV	#40., R2	; количество столбцов
+20$:	PUSH	R2
+	PUSH	R3
+	MOV	#80., R5	; количество строк / 2
+10$:
+	MOV	R4, @#177010
+	MOV	@#177014, R0	; читаем из планов 1/2 - 1 слово
+	INC	R4
+	MOV	R4, @#177010
+	MOV	@#177014, R1	; читаем из планов 1/2 - 2 слово
+	INC	R4
+	MOV	R4, @#177010
+	MOV	@#177014, R2	; читаем из планов 1/2 - 3 слово
+	INC	R4
+
+	SWAB	R1
+	PUSH	R1
+	SWAB	R0
+	BIC	#377, R1
+	BISB	R0, R1
+	SWAB	R0
+
+	MOV	R3, @#177010
+	MOV	R0, @#177012	; записываем в план 0 -- фон
+	MOV	R1, @#177014	; записываем в планы 1/2
+	ADD	#80., R3	; к следующей строке
+
+	POP	R1
+
+	MOV	R3, @#177010
+	MOV	R1, @#177012	; записываем в план 0 -- фон
+	MOV	R2, @#177014	; записываем в планы 1/2
+	ADD	#80., R3	; к следующей строке
+
+	SOB	R5, 10$
+	POP	R3
+	INC	R3		; к следующей колонке
+	POP	R2
+	SOB	R2, 20$
+
+	RETURN
+ENDPP:
+
+; Подпрограмма: Печать строки: R1 = адрес строки, строка завершается 0; портит R0
+; После завершения R1 указывает на байт следующий за 0
+PRINT:
+10$:	MOVB	(R1)+, R0	; Конец строки?
+	BEQ	RETN		; да => выходим
+20$:	TSTB	@#177564	; Источник канала 0 готов?
+	BPL	20$		; нет => ждём
+	MOV	R0, @#177566	; передаём символ в канал 0
+	BR	10$
+
+; Подпрограмма: Ожидание символа с клавиатуры: R0 = полученный символ
+WTKEY:	TSTB	@#177560
+	BPL	WTKEY
+	CLR	R0
+	MOVB	@#177562, R0	; символ в R0
+	CMPB	R0, #33
+	BNE	RETN
+ESCKEY:	TSTB	@#177560
+	BPL	ESCKEY
+	MOVB	@#177562, R0	; символ в R0
+	BIS	#15400,R0	; #33 в верхний байт
+RETN:	RETURN
+
+; Подпрограмма: Ожидание ввода цифры '1'..N;
+; R1 = N в виде символа, например, #062 для '2'
+; Результат: R0 = символ цифры '1'..N
+WTKEYN:	CALL	WTKEY
+	CMP	#061, R0	; '1'
+	BHI	WTKEYN
+	CMP	R1, R0
+	BLT	WTKEYN
+	RETURN
+
+;Подпрограмма: пауза после очистки экрана чтобы ПП закончил работу
+PAUSE:	; Pause to let PPU finish the previous commands
+	MOV	#177777, R5
+PAUSE0:	NOP
+	SOB	R5, PAUSE0
+	RETURN
+
+;------------------------------------------------------------------------------
+
+; https://github.com/purplesyringa/lzsa3
+; Optimized LZSA3 decompressor for PDP-11 by Manwe and Ivanq. Thanks to Ivan Gorodetsky
+; Usage: MOV #src_adr,R1 / MOV #dst_adr,R2 / CALL UNLZSA
+UNLZSA::
+	CLR R5			; no nibbles sign
+10$:	MOVB (R1)+,R3		; read token
+;Liter:
+20$:	MOV R3,R0
+	BIC #177774,R0		; get 2 bits
+	BEQ 30$
+	CMP R0,#3		; literals length
+	BNE 25$
+	CALL 110$
+25$:	MOVB (R1)+,(R2)+	; literals length in R0
+	SOB R0,25$
+;Decode:
+30$:	MOV R3,-(SP)
+	ROLB R3			; get 2 bits
+	ROL R0
+	ROLB R3
+	ROL R0
+	ASL R0
+	ADD R0,PC		; run subroutine
+	BR 90$
+	BR 70$
+	BR 80$
+;o5bit:
+40$:	CALL 100$		; get nibble in R0
+	ROLB R3
+	ROL R0
+	INC R0
+;Save:
+50$:	MOV R0,R4		; save offset for future
+;Match:
+55$:	MOV (SP)+,R0
+	ASR R0
+	ASR R0
+	BIC #177770,R0		; get 3 bits
+	CMP R0,#7
+	BNE 60$
+	CALL 110$
+	TSTB R0			; match length
+	BEQ 120$
+;Clone:
+60$:	MOV R2,R3
+	SUB R4,R3
+	MOVB (R3)+,(R2)+
+	INC R0
+61$:	MOVB (R3)+,(R2)+
+	SOB R0,61$
+	BR 10$
+;o9bit:
+70$:	CLR R0
+	BISB (R1)+,R0
+	ROLB R3
+	ROL R0
+	INC R0
+	BR 50$
+;o13bit:
+80$:	CALL 100$ 		; get nibble in R0
+	ROLB R3
+	ROL R0
+	SWAB R0
+	BISB (R1)+,R0		; 8 bits
+	ADD #513.,R0
+	BR 50$
+;oOther:
+90$:	ROLB R3
+	BCS 55$
+	BISB (R1)+,R0		; read 16 bits
+	SWAB R0
+	BISB (R1)+,R0
+	BR 50$
+;Nibble:
+100$:	COM R5
+	BMI 101$
+	MOV R5,R0
+	CLR R5
+	BR 102$
+101$:	BICB (R1)+,R5		; read 2 nibbles
+	MOV R5,R0
+	ASR R0
+	ASR R0
+	ASR R0
+	ASR R0
+102$:	BIC #177760,R0		; leave 4 low bits
+	RETURN
+;Extend:
+110$:	MOV R0,-(SP)		; save original value
+	CALL 100$ 		; get nibble in R0
+	BNE 112$
+	BISB (R1)+,R0
+	BNE 111$
+	; unnecessary for short files
+	BISB (R1)+,R0		; read high byte
+	SWAB R0
+	BISB (R1)+,R0		; read low byte
+	TST (SP)+		; skip saved R0
+	RETURN
+111$:	ADD #15.,R0
+112$:	DEC R0
+	ADD (SP)+,R0		; add original value
+;Exit:
+120$:	RETURN
+
+;------------------------------------------------------------------------------
+; Макросы для использования в коде уровней
+
+.MACRO	.PRINT	T
+	MOV	T, R1
+	CALL	PRINT
+.ENDM
+
+; Очистка области сообщений
+.MACRO	.CLMSG
+	MOV	#CLMSG, R1
+	CALL	PRINT
+.ENDM
+
+; Очистка области сообщений и вывод сообщения
+.MACRO	.PRMSG	T
+	MOV	#CLMSG, R1
+	CALL	PRINT
+	MOV	T, R1
+	CALL	PRINT
+.ENDM
+
+; Показываем что ждём нажатия клавиши и ожидаем нажатия
+.MACRO	.WTKEY
+	MOV	#WTKEYT, R1
+	CALL	PRINT
+	CALL	WTKEY
+.ENDM
+
+; Показываем что ждём выбора из предложенных вариантов;
+; параметр K = код символа-цифры для максимального варианта, например, #067 для '7';
+; после макроса с помощью .WORD должны быть перечислены адреса перехода
+.MACRO	.WTSEL	K
+	MOV	#WTSELT, R1
+	CALL	PRINT
+	MOV	K, R1
+	CALL	WTKEYN		; ограничивает ввод цифрами от 1 до K
+	CALL	JMPNUM
+.ENDM
+; Вспомогательная процедура для макроса - обеспечивает переход по выбранному варианту
+JMPNUM:
+	SUB	#061, R0	; 0..N-1
+	ASL	R0		; *2
+	ADD	(SP), R0
+	MOV	(R0), R0
+	JMP	(R0)
+
+;------------------------------------------------------------------------------
+
+	. = 010000
+	. = <.+511.>&177000	; Выравниваем по границе блока
+; Место начала кода уровня
+LBEGIN::
+.INCLUDE /LEVEL.MAC/
+LEND::
+
+;------------------------------------------------------------------------------
+	.END	START
