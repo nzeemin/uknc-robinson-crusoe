@@ -9,9 +9,9 @@ for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "d
 set "YY=%dt:~2,2%" & set "YYYY=%dt:~0,4%" & set "MM=%dt:~4,2%" & set "DD=%dt:~6,2%"
 set "DATESTAMP=%YYYY%-%MM%-%DD%"
 for /f %%i in ('git rev-list HEAD --count') do (set REVISION=%%i)
-echo Rev.%REVISION% %DATESTAMP%
+echo V%REVISION% %DATESTAMP%
 
-echo VERSTR:	.ASCII "Rev.%REVISION% %DATESTAMP%" > VERSIO.MAC
+echo VERSTR:	.ASCII "V%REVISION% %DATESTAMP%" > VERSIO.MAC
 
 @if exist ROBIN.LST del ROBIN.LST
 @if exist ROBIN.OBJ del ROBIN.OBJ
