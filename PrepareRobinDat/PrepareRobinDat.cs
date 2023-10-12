@@ -61,6 +61,8 @@ class Program
         Console.WriteLine("Saved ROBIN.DAT");
 
         var levelsLines = new List<string>();
+        levelsLines.Add($"TITLZS = {binTitleLz.Length}.");
+        levelsLines.Add("");
         levelsLines.Add("LEVELS:: ; ScrBlk, ScrSize, ExtBlk, ExtSize, CodeBlk, CodeSize");
         for (var scrno = 1; scrno <= infos.Count; scrno++)
         {
