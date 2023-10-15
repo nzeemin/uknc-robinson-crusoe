@@ -852,6 +852,7 @@ SELNM:	CLR	SELNMF		; Очищаем выбранные биты
 	POP	R1
 	CMP	SELNMN, R2	; выбрали всё что нужно?
 	BNE	10$
+	MOV	SELNMF, R0	; возвращаемое значение
 	RETURN
 SELNMN:	.WORD	0		; сколько нужно выбрать (N)
 SELNMF:	.WORD	0		; выбранные биты
