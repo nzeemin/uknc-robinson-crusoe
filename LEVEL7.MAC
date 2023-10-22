@@ -182,152 +182,170 @@ L52:	.PRMSG	#TEXT52
 
 ;------------------------------------------------------------------------------
 
-TEXT0:
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-TEXT1:	.ASCII	//<25>
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-TEXT2:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT3:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT4:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT5:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT6:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT7:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT8:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT9:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT10:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT11:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT12:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT13:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT14:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT15:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT16:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT17:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT18:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT19:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT20:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT21:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT22:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT23:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT24:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT25:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT26:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT27:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT28:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT29:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT30:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT31:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT32:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT33:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT34:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT35:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT36:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT37:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT38:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT39:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT40:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT41:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT42:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT43:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT44:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT45:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT46:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT47:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT48:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT49:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT50:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT51:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT52:	.ASCII	//<25>
-	.ASCIZ	//
+TEXT1:	.ASCII	/Действительно, там был корабль/<25>
+	.ASCII	/под британским флагом, но что-то/<25>
+	.ASCIZ	/привлекло моё внимание./
+TEXT2:	.ASCII	/Человек был привязан к большой мачте,/<25>
+	.ASCII	/а другой изучал остров./<25>
+	.ASCII	/ 1: Я бросился к ним./<25>
+	.ASCII	/ 2: Я остался спрятанным./<25>
+	.ASCIZ	/ 3: Я вернулся, чтобы найти оружие./
+TEXT3:	.ASCIZ	/Мы вернулись, чтобы наблюдать корабль.../
+TEXT4:	.ASCII	/Преодолевая свой страх, я бросился/<25>
+	.ASCIZ	/к своим соотечественникам./
+TEXT5:	.ASCII	/Я слишком поспешил, и меня поймали/<25>
+	.ASCIZ	/бандиты./
+TEXT6:	.ASCII	/Робинзон умирает, убитый своими/<25>
+	.ASCII	/соотечественниками, после двадцати восьми/
+	.ASCIZ	/лет надежды на их возвращение./
+TEXT7:	.ASCIZ	/Я дал Пятнице знак остаться спрятанным./
+TEXT8:	.ASCII	/Шлюпка отправилась в море, направляясь/<25>
+	.ASCII	/прямо к нашему пляжу./<25>
+TEXT9:	.ASCII	/Они высадили двух английских заключенных./
+	.ASCIZ	/Это были офицеры!/
+TEXT10:	.ASCII	/ 1: Я представился вождю бандитов./<25>
+	.ASCII	/ 2: Я попытался их освободить без шума./<25>
+	.ASCIZ	/ 3: Я остался в стороне./
+TEXT11:	.ASCII	/Я пригласил его посетить мой дом./<25>
+	.ASCII	/ 1: Но оставил Пятницу на улице./<25>
+	.ASCIZ	/ 2: Я подал ему напиток./
+TEXT12:	.ASCII	/К счастью, потому что он устроил/<25>
+	.ASCII	/нам ловушку. С помощью Пятницы я убил/<25>
+	.ASCIZ	/его и его людей./
+TEXT13:	.ASCIZ	/Мы вернулись к группе пленных./
+TEXT14:	.ASCIZ	/Он устроил нам ловушку.../
+TEXT15:	.ASCII	/Но мы смогли сбежать через заднюю дверь./<25>
+	.ASCIZ	/Я отправился освобождать пленных./
+TEXT16:	.ASCII	/Робинзон и Пятница умерли, с оружием/<25>
+	.ASCIZ	/в руках, застигнутые врасплох предателем./
+TEXT17:	.ASCII	/Мы их удивили, но Пятница не умел/<25>
+	.ASCII	/стрелять, и их ответ был страшным./<25>
+	.ASCII	/Бунтовщики, которым было больше нечего/<25>
+	.ASCIZ	/терять, убили Робинзона и Пятницу./
+TEXT18:	.ASCII	/Мы застали их врасплох, затем,/<25>
+	.ASCII	/угрожая им оружием,/<25>
+	.ASCII	/ 1: Я узнал настоящих виновных./<25>
+	.ASCIZ	/ 2: Мы убили всех мятежников./
+TEXT19:	.ASCII	/Таким образом, это был мятеж./<25>
+	.ASCII	/ 1: Я предложил помощь капитану./<25>
+	.ASCII	/ 2: Я остался в стороне./<25>
+	.ASCIZ	/ 3: Я спросил мнение Пятницы./
+TEXT20:	.ASCIZ	/Робинзон и Пятница оставили офицеров./
+TEXT21:	.ASCII	/Он хотел сражаться рядом со мной/<25>
+	.ASCIZ	/и прийти на помощь капитану./
+TEXT22:	.ASCII	/К сожалению, шум взрывов предупредил/<25>
+	.ASCIZ	/оставшихся бандитов на корабле./
+TEXT23:	.ASCIZ	/Наша ситуация стала опасной./
+TEXT24:	.ASCII	/Капитан с радостью принял наше/<25>
+	.ASCII	/предложение./<25>
+	.ASCIZ	/На борту оставалось 26 человек./
+TEXT25:	.ASCIZ	/Я вооружил наш маленький отряд./
+TEXT26:	.ASCII	/Капитан предложил выкупить двух матросов,/
+	.ASCII	/которые, как назло, оказались/<25>
+	.ASCII	/мятежниками./<25>
+	.ASCII	/ 1: Я согласился./<25>
+	.ASCIZ	/ 2: Я отказался./
+TEXT27:	.ASCII	/Так что нас было семеро!/<25>
+	.ASCIZ	/Мы потащили за собой остальных./
+TEXT28:	.ASCIZ	/Нас было пятеро!/
+TEXT29:	.ASCII	/Еще один баркас высаживался!/<25>
+	.ASCII	/Прорубив в их лодке дыру, мы разделились/<25>
+	.ASCIZ	/на три группы./
+TEXT30:	.ASCII	/ 1: Мы повели мятежников к центру/<25>
+	.ASCII	/    острова./<25>
+	.ASCII	/ 2: Мы атаковали всех, как только они/<25>
+	.ASCIZ	/    достигли берега./<25>
+TEXT31:	.ASCIZ	/Еще одна шлюпка приближалась!/
+TEXT32:	.ASCII	/ 1: Мы провели тех, кто находился/<25>
+	.ASCII	/    на второй шлюпке, в центр острова./<25>
+	.ASCII	/ 2: Мы совершили нападение в большом/<25>
+	.ASCIZ	/    количестве./
+TEXT33:	.ASCII	/Мы были застигнуты врасплох теми, кто/<25>
+	.ASCIZ	/устроил для нас ловушку в подземелье./
+TEXT34:	.ASCII	/Робинзон умер от ударов вместе со своим/<25>
+	.ASCIZ	/верным спутником./
+TEXT35:	.ASCII	/Робинсон и Пятница оставались в тайне/<25>
+	.ASCII	/до отплытия корабля. Следы и свежие/<25>
+	.ASCII	/могилы были единственными остатками/<25>
+	.ASCIZ	/драмы./
+TEXT36:	.ASCIZ	/Они умерли от старости на своем острове./
+TEXT37:	.ASCII	/Было легко подстеречь их поочередно/<25>
+	.ASCII	/в кустах./<25>
+	.ASCII	/Вскоре на острове не осталось/<25>
+	.ASCIZ	/ни одного врага./
+TEXT38:	.ASCII	/Капитан сказал мне, кто из заключенных/<25>
+	.ASCII	/был менее опасен./<25>
+	.ASCII	/Теперь оставалось вернуться на борт/<25>
+	.ASCIZ	/корабля и восстановить его контроль./
+TEXT39:	.ASCII	/ 1: Я предложил пощаду тем матросам,/<25>
+	.ASCII	/    которых выбрали./<25>
+	.ASCII	/ 2: Будучи подозрительным, я отказал/<25>
+	.ASCIZ	/    в пощаде всем матросам./
+TEXT40:	.ASCII	/Мы атаковали в полную силу./<25>
+	.ASCIZ	/Пятница был смелым союзником./
+TEXT41:	.ASCIZ	/Но их было слишком много.../
+TEXT42:	.ASCII	/Робинзон умер рядом со своим верным/<25>
+	.ASCIZ	/спутником./
+TEXT43:	.ASCII	/С моей небольшой группой мы подождали/<25>
+	.ASCII	/ночи, чтобы атаковать корабль. Их капитан/
+	.ASCIZ	/казался беспокойным. Он покинул палубу./
+TEXT44:	.ASCII	/С хорошей вооруженностью и используя/<25>
+	.ASCIZ	/эффект неожиданности, у нас были шансы/<25>
+	.ASCIZ	/на успех!/
+TEXT45:	.ASCII	/Но мы были плохо вооружены, и наши шансы/<25>
+	.ASCIZ	/были крайне малы./
+TEXT46:	.ASCIZ	/Нам пришлось в спешке укрыться в моем замке./
+TEXT47:	.ASCII	/Я вовремя вытащил лестницу, и мы смогли/<25>
+	.ASCIZ	/выдержать осаду./
+TEXT48:	.ASCIZ	/Разбойники выломали дверь и убили нас./
+TEXT49:	.ASCII	/Робинзон погиб вместе со своими/<25>
+	.ASCIZ	/английскими друзьями и Пятницей./
+TEXT50:	.ASCII	/Мы сели на вторую шлюпку вместе с нашими/<25>
+	.ASCII	/новыми друзьями и заложниками./<25>
+	.ASCIZ	/Мое сердце билось сильно./
+TEXT51:	.ASCII	/Атака была успешной. После ареста лидера/<25>
+	.ASCIZ	/мятежников, остальные сдались./
+TEXT52:	.ASCII	/Вооружившись и отдохнув, мы атаковали/<25>
+	.ASCII	/через задние ворота и частокол./<25>
+	.ASCIZ	/Мы были в безопасности./
+TEXT53:	.ASCII	/Но, плохо вооруженные, мы вынуждены были/<25>
+	.ASCIZ	/сдаться после многочасовых уговоров./
+TEXT54:	.ASCII	/Робинсон погиб рядом со своими друзьями,/<25>
+	.ASCIZ	/защищаясь./
+TEXT55:	.ASCII	/Мы высадили бунтовщиков на мой остров./<25>
+	.ASCII	/Я объяснил им, как выживать./<25>
+	.ASCII	/Мне оставалось лишь попрощаться с этим/<25>
+	.ASCII	/местом, столь дорогим и проклятым/<25>
+	.ASCIZ	/одновременно./
+TEXT56:	.ASCII	/Я захватил с собой свою шапку из кожи /<25>
+	.ASCII	/козы, долгое время бесполезное золото/<25>
+	.ASCIZ	/и несколько сувениров на память./
+TEXT57:	.ASCII	/Я взял свою шапку из кожи козы/<25>
+	.ASCIZ	/и несколько сувениров на память./
+TEXT58:	.ASCII	/Это был провал./<25>
+	.ASCIZ	/Робинзон и его друзья погибли в бою./
+TEXT59:	.ASCIZ	/Тем не менее, мы добились успеха./
+TEXT60:	.ASCII	/ 1: Я сказал Пятнице остаться на острове./
+	.ASCIZ	/ 2: Я хотел, чтобы Пятница пошел со мной./
+TEXT61:	.ASCII	/Я всегда сожалел о своем поступке,/<25>
+	.ASCIZ	/который омрачил мои последние дни./
+TEXT62:	.ASCII	/Он остался моим верным спутником/<25>
+	.ASCIZ	/на протяжении всей жизни в Англии./
+TEXT63:	.ASCII	/Корабль отправился в путь, и я долго/<25>
+	.ASCII	/оставался на палубе, наблюдая за этими/<25>
+	.ASCII	/людьми, которые занимали мое место/<25>
+	.ASCIZ	/на этой дикой земле./
+TEXT64:	.ASCII	/Прошло двадцать восемь лет, девять/<25>
+	.ASCII	/месяцев и девятнадцать дней с момента/<25>
+	.ASCIZ	/моего крушения на острове./
+TEXT65:	.ASCII	/Робинзон вернулся в Европу, где благодаря/
+	.ASCII	/своему богатству прожил счастливую/<25>
+	.ASCII	/и мирную жизнь, окруженный/<25>
+	.ASCIZ	/воспоминаниями./<25>
+TEXT66:	.ASCII	/Робинзон вернулся в Европу, где ему/<25>
+	.ASCII	/пришлось начинать жизнь с чистого листа./<25>
+	.ASCII	/Он вернулся без чего-либо, кроме своих/<25>
+	.ASCII	/воспоминаний и некоторого имущества,/<25>
+	.ASCIZ	/оставленного перед отъездом./
 
 ;------------------------------------------------------------------------------

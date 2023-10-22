@@ -137,206 +137,113 @@ L38:	.PRMSG	#TEXT38
 ;
 L39:	.PRMSG	#TEXT39
 	.WTKEY
-;
-L40:	.PRMSG	#TEXT40
-	.WTKEY
-;
-L41:	.PRMSG	#TEXT41
-	.WTKEY
-;
-L42:	.PRMSG	#TEXT42
-	.WTKEY
-;
-L43:	.PRMSG	#TEXT43
-	.WTKEY
-;
-L44:	.PRMSG	#TEXT44
-	.WTKEY
-;
-L45:	.PRMSG	#TEXT45
-	.WTKEY
-;
-L46:	.PRMSG	#TEXT46
-	.WTKEY
-;
-L47:	.PRMSG	#TEXT47
-	.WTKEY
-;
-L48:	.PRMSG	#TEXT48
-	.WTKEY
-;
-L49:	.PRMSG	#TEXT49
-	.WTKEY
-;
-L50:	.PRMSG	#TEXT50
-	.WTKEY
-;
-L51:	.PRMSG	#TEXT51
-	.WTKEY
-;
-L52:	.PRMSG	#TEXT52
-	.WTKEY
-;
 
 	JMP	TITLE
 
 ;------------------------------------------------------------------------------
 
-TEXT0:
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-TEXT1:	.ASCII	//<25>
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-TEXT2:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT3:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT4:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT5:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT6:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT7:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT8:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT9:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT10:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT11:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT12:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT13:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT14:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT15:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT16:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT17:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT18:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT19:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT20:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT21:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT22:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT23:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT24:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT25:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT26:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT27:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT28:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT29:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT30:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT31:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT32:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT33:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT34:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT35:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT36:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT37:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT38:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT39:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT40:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT41:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT42:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT43:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT44:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT45:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT46:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT47:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT48:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT49:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT50:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT51:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT52:	.ASCII	//<25>
-	.ASCIZ	//
+TEXT1:	.ASCII	/С любопытством наблюдая друг за другом,/<25>
+	.ASCII	/мы добрались до моей пещеры./<25>
+	.ASCII	/ 1: Я устроил его у моих ног./<25>
+	.ASCII	/ 2: Я построил для него хижину./<25>
+	.ASCIZ	/ 3: Я привязал его снаружи./<25>
+TEXT2:	.ASCII	/Я приготовил для него спальное место/<25>
+	.ASCIZ	/и привязал к ноге моей постели./
+TEXT3:	.ASCII	/Я построил для него милую хижину/<25>
+	.ASCIZ	/под листьями./
+TEXT4:	.ASCIZ	/Я привязал его снаружи, осторожничая./
+TEXT5:	.ASCII	/На следующий день я отвел его/<25>
+	.ASCII	/на проклятый пляж; он хотел питаться/<25>
+	.ASCIZ	/трупами. Я спас человека-людоеда!/
+TEXT6:	.ASCII	/Ужаснувшись,/<25>
+	.ASCII	/ 1: Я его убил./<25>
+	.ASCII	/ 2: Меня тронула его невежественность./<25>
+	.ASCIZ	/ 3: Я угрожал ему./
+TEXT7:	.ASCII	/После смерти Пятницы я остался одиноким/<25>
+	.ASCIZ	/и отчаянным после двадцати трех лет/<25>
+	.ASCIZ	/одиночества./
+TEXT8:	.ASCII	/Расчувствовавшись, я решил научить/<25>
+	.ASCII	/его всему, даже как есть./<25>
+	.ASCII	/С помощью моей винтовки я убил козленка,/<25>
+	.ASCIZ	/но он испугался шума./
+TEXT9:	.ASCII	/ 1: Я решил воспользоваться своей силой./<25>
+	.ASCIZ	/ 2: Я успокоил его и накормил./
+TEXT10:	.ASCII	/Я испугал его огненной палкой,/<25>
+	.ASCII	/чтобы заставить его послушаться./<25>
+	.ASCII	/ 1: Я научил его мне служить./<25>
+	.ASCII	/ 2: Я провел ему экскурсию по моей земле./<25>
+	.ASCIZ	/ 3: Я наказал его./
+TEXT11:	.ASCII	/Ему понравился вкус./<25>
+	.ASCII	/ 1: Я попросил его обещать больше/<25>
+	.ASCII	/    не есть человеческое мясо./<25>
+	.ASCII	/ 2: Я пригласил его помолиться./<25>
+	.ASCIZ	/ 3: Я научил его стрелять./
+TEXT12:	.ASCII	/Очень медленно я приучил его к оружию,/<25>
+	.ASCIZ	/и он стал хорошим стрелком./
+TEXT13:	.ASCII	/Вдохновленный его успехами,/<25>
+	.ASCII	/ 1: Я научил его говорить./<25>
+	.ASCII	/ 2: Я провел ему экскурсию по моим/
+	.ASCIZ	/    владениям, ведя себя как хозяин./
+TEXT14:	.ASCIZ	/Он быстро научился общаться.../
+TEXT15:	.ASCII	/ 1: Я накормил его, чтобы он набрал вес./<25>
+	.ASCIZ	/ 2: Я научил его служить мне./
+TEXT16:	.ASCII	/В конечном итоге он начал меня ненавидеть/
+	.ASCIZ	/и представлял угрозу./
+TEXT17:	.ASCIZ	/Я вынужден был его убить./
+TEXT18:	.ASCII	/ 1: Я не накормил его./<25>
+	.ASCIZ	/ 2: Я не научил его служить мне./
+TEXT19:	.ASCII	/Однако нехватка пищи привела к более/<25>
+	.ASCIZ	/ожесточенным схваткам./
+TEXT20:	.ASCII	/Мы объяснились, и он понял, что нужно/<25>
+	.ASCIZ	/помогать мне в поиске пищи./
+TEXT21:	.ASCIZ	/Мне пришлось его убить./
+TEXT22:	.ASCIZ	/Он был поражен моими устройствами./
+TEXT23:	.ASCII	/Он понял, что должен служить мне./<25>
+	.ASCIZ	/Я учил его жестами./
+TEXT24:	.ASCII	/Он был умелым. Он быстро стал хорошим/<25>
+	.ASCII	/ремесленником. Он научился плести солому,/
+	.ASCIZ	/сушить виноград, ухаживать за козами./
+TEXT25:	.ASCII	/ 1: Я одел его./<25>
+	.ASCIZ	/ 2: Я показал ему нашу территорию./
+TEXT26:	.ASCII	/Прежде всего, я надел его в морскую/<25>
+	.ASCII	/куртку и брюки матроса./<25>
+	.ASCII	/ 1: Я дал ему пояс с ножом и винтовкой./<25>
+	.ASCII	/ 2: Я попытался обратить его в мою/<25>
+	.ASCIZ	/    религию./
+TEXT27:	.ASCIZ	/Затем я показал ему наш остров./
+TEXT28:	.ASCIZ	/Затем я показал ему наш остров./
+TEXT29:	.ASCII	/С высоты моей наблюдательной башни,/<25>
+	.ASCII	/он увидел берега своей родины./<25>
+	.ASCIZ	/Его радость вызвала у меня ревность./
+TEXT30:	.ASCII	/ 1: Я привязал его, чтобы он не смог/<25>
+	.ASCII	/    убежать./<25>
+	.ASCII	/ 2: Я спросил его, как можно было бы туда/
+	.ASCIZ	/    попасть./
+TEXT31:	.ASCII	/Пятница объяснил мне, как построить/<25>
+	.ASCII	/лодку. Мы взяли с собой продовольствие./<25>
+	.ASCIZ	/Но он подумал, что я хочу уйти без него./
+TEXT32:	.ASCII	/ 1: Я успокоил его./<25>
+	.ASCIZ	/ 2: Я отказался от этой идеи./
+TEXT33:	.ASCII	/Сердце мое разрывалось, но я решил:/<25>
+	.ASCII	/ 1: Убить его./<25>
+	.ASCIZ	/ 2: Принять риск его бегства./
+TEXT34:	.ASCII	/Мы жили очень счастливо в течение/<25>
+	.ASCII	/трех лет. В один прекрасный день корабль/<25>
+	.ASCIZ	/бросил якорь в южной бухте./
+TEXT35:	.ASCII	/Но Пятница, будучи подозрительным,/<25>
+	.ASCII	/скрыл приход корабля от стареющего/<25>
+	.ASCIZ	/Робинзона./
+TEXT36:	.ASCII	/Робинзон умер от старости на своем/<25>
+	.ASCIZ	/острове, который стал его королевством./
+TEXT37:	.ASCII	/Пятница побежал предупредить Робинзона./<25>
+	.ASCII	/Оба, очень взволнованные, отправились/<25>
+	.ASCIZ	/наблюдать корабль./
+TEXT38:	.ASCII	/Робинзон старел в одиночестве./<25>
+	.ASCII	/Через многие годы английский корабль/<25>
+	.ASCII	/пришвартовался у берегов. Однако,/<25>
+	.ASCII	/Робинзон, который уже мало двигался,/<25>
+	.ASCIZ	/не увидел его./
+TEXT39:	.ASCII	/Он умер на своем острове, который стал/<25>
+	.ASCIZ	/его одиноким королевством./
 
 ;------------------------------------------------------------------------------

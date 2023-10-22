@@ -166,172 +166,126 @@ L47:	.PRMSG	#TEXT47
 ;
 L48:	.PRMSG	#TEXT48
 	.WTKEY
-;
-L49:	.PRMSG	#TEXT49
-	.WTKEY
-;
-L50:	.PRMSG	#TEXT50
-	.WTKEY
-;
-L51:	.PRMSG	#TEXT51
-	.WTKEY
-;
-L52:	.PRMSG	#TEXT52
-	.WTKEY
-;
 
 	JMP	TITLE
 
 ;------------------------------------------------------------------------------
 
-TEXT0:
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-TEXT1:	.ASCII	//<25>
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
+TEXT1:	.ASCII	/Много лет спустя, идя к берегу,/<25>
+	.ASCIZ	/я увидел след человеческой ноги!/
 TEXT2:	.ASCII	/Взволнованный,/<25>
-	.ASCII	//<25>
-	.ASCII	//<25>
-	.ASCIZ	//
-TEXT3:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT4:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT5:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT6:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT7:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT8:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT9:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT10:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT11:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT12:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT13:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT14:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT15:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT16:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT17:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT18:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT19:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT20:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT21:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT22:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT23:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT24:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT25:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT26:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT27:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT28:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT29:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT30:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT31:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT32:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT33:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT34:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT35:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT36:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT37:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT38:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT39:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT40:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT41:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT42:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT43:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT44:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT45:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT46:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT47:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT48:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT49:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT50:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT51:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT52:	.ASCII	//<25>
-	.ASCIZ	//
+	.ASCII	/ 1: Я хотел верить, что это был мой след./<25>
+	.ASCII	/ 2: Я убежал./<25>
+	.ASCIZ	/ 3: Я решил больше заниматься земледелием./
+TEXT3:	.ASCII	/Я убедил себя, что это была именно моя/<25>
+	.ASCII	/стопа, и больше не обращал внимания/<25>
+	.ASCIZ	/на следы./
+TEXT4:	.ASCII	/Я побежал, не задумываясь, до другого/<25>
+	.ASCII	/конца острова и пробыл в подавленном/<25>
+	.ASCIZ	/состоянии более восьми дней./
+TEXT5:	.ASCII	/Дикари!/<25>
+	.ASCII	/Я начал увеличивать свои посевы,/<25>
+	.ASCIZ	/чтобы справиться с возможной осадой./
+TEXT6:	.ASCII	/Затем занялся козами./<25>
+	.ASCII	/ 1: Я разогнал их./<25>
+	.ASCIZ	/ 2: Построил второй загон./
+TEXT7:	.ASCII	/Потеряв поддержку, мои козы заболели,/<25>
+	.ASCIZ	/и я потерял многих из них./
+TEXT8:	.ASCIZ	/Чтобы их вылечить, я дал им зерна./
+TEXT9:	.ASCII	/Не имея зерна для их поддержки,/<25>
+	.ASCIZ	/я освободил тех немногих что выжили./
+TEXT10:	.ASCII	/Я также захотел защитить свою пещеру./<25>
+	.ASCII	/ 1: Убрав ограду, чтобы скрыть свое/<25>
+	.ASCII	/    присутствие./<25>
+	.ASCIZ	/ 2: Укрепив мою оборону./
+TEXT11:	.ASCII	/Дикари вернулись, преследуя Робинзона,/<25>
+	.ASCII	/который не смог найти убежище и погиб,/<25>
+	.ASCIZ	/защищаясь./
+TEXT12:	.ASCII	/Но я вернулся на пляж и увидел потухший/<25>
+	.ASCIZ	/костер и человеческие кости!/
+TEXT13:	.ASCII	/Каннибалы устроили свой мрачный пир прямо/
+	.ASCIZ	/здесь!/
+TEXT14:	.ASCII	/Я больше не осмеливался охотиться из-за/<25>
+	.ASCIZ	/шума. Я съел свои запасы и своих коз./
+TEXT15:	.ASCII	/Я быстро изнемогал, не имея коз/<25>
+	.ASCIZ	/для питания./
+TEXT16:	.ASCII	/ 1: Я избегал пляжа./<25>
+	.ASCII	/ 2: Я возвращался следить каждый день./<25>
+	.ASCIZ	/ 3: Я решил забыть об этом инциденте./
+TEXT17:	.ASCIZ	/Каннибалы вернулись!/
+TEXT18:	.ASCII	/Но поведение Пепина, испуганного,/<25>
+	.ASCIZ	/предупредило меня вовремя./
+TEXT19:	.ASCII	/Они застали Робинзона беззащитным/<25>
+	.ASCIZ	/и убили его.../
+TEXT20:	.ASCIZ	/У них были живые пленники под их властью./
+TEXT21:	.ASCII	/Дикари исполняли дикий танец смерти./<25>
+	.ASCII	/ 1: Я ждал удобного момента./<25>
+	.ASCII	/ 2: Я сразу вмешался./<25>
+	.ASCIZ	/ 3: Я убежал./
+TEXT22:	.ASCII	/Малоподготовленный, плохо вооруженный,/<25>
+	.ASCII	/без плана атаки, Робинзон погиб/<25>
+	.ASCII	/под натиском противников,/<25>
+	.ASCIZ	/не имея возможности сбежать./
+TEXT23:	.ASCII	/К несчастью, первый пленник погиб./<25>
+	.ASCII	/Второй ринулся в последнюю попытку/<25>
+	.ASCIZ	/бегства./
+TEXT24:	.ASCII	/Без огнестрельного оружия я набросился/<25>
+	.ASCII	/с холодным оружием, отправляясь/<25>
+	.ASCIZ	/к неизбежной смерти./
+TEXT25:	.ASCIZ	/Робинзон погиб в схватке./
+TEXT26:	.ASCIZ	/Я убил одного дикаря!/
+TEXT27:	.ASCIZ	/Остальные бежали к своим шлюпкам./
+TEXT28:	.ASCII	/Затем, раскаиваясь в своем недоверии,/<25>
+	.ASCIZ	/я вернулся искать его./
+TEXT29:	.ASCII	/Затем,/<25>
+	.ASCII	/ 1: Мы оба вернулись в пещеру./<25>
+	.ASCIZ	/ 2: Я оставил пленника на пляже./
+TEXT30:	.ASCII	/Я окрестил своего нового спутника/<25>
+	.ASCII	/Пятницей, и положил конец этому долгому/<25>
+	.ASCIZ	/уединению, длившемуся двадцать пять лет./
+TEXT31:	.ASCII	/Сильно испуганный пленник пришел меня/<25>
+	.ASCII	/благодарить./<25>
+	.ASCIZ	/Но он мог быть опасным./
+TEXT32:	.ASCII	/ 1: Я приподнял оружие и выстрелил/<25>
+	.ASCII	/    в воздух./
+	.ASCIZ	/ 2: Я опустил оружие./
+TEXT33:	.ASCIZ	/Испуганный мушкетом, дикарь убежал./
+TEXT34:	.ASCII	/ 1: Я оставил его на произвол судьбы./<25>
+	.ASCII	/ 2: Я искал его, чтобы убить./<25>
+	.ASCII	/ 3: Я искал его, чтобы связать./<25>
+	.ASCII	/ 4: Я бросил оружие, чтобы отправиться/<25>
+	.ASCIZ	/    на его поиски./
+TEXT35:	.ASCIZ	/Он исчез./
+TEXT36:	.ASCIZ	/Но он был ловким./
+TEXT37:	.ASCIZ	/И я привязал его к дереву./
+TEXT38:	.ASCII	/Он встал на колени, чтобы поблагодарить/<25>
+	.ASCII	/меня./<25>
+	.ASCII	/ 1: Я вернул ему свободу./<25>
+	.ASCII	/ 2: Я привязал его к дереву./<25>
+	.ASCIZ	/ 3: Я дал ему пить и есть./
+TEXT39:	.ASCIZ	/И я дал ему есть./
+TEXT40:	.ASCIZ	/Он не смог мне помочь./
+TEXT41:	.ASCII	/Каннибалы вернулись в большом количестве./
+	.ASCII	/Без ценной помощи его нового спутника,/<25>
+	.ASCII	/Робинзон умер, уверенный, что у него/
+	.ASCIZ	/никогда не будет могилы./
+TEXT42:	.ASCIZ	/Он долго ел и пил./
+TEXT43:	.ASCII	/Каннибалы вернулись в большом количестве./
+	.ASCII	/Несмотря на свой страх, мой новый спутник/
+	.ASCIZ	/взял меч с земли и отправился в бой./<25>
+TEXT44:	.ASCII	/На этот раз мы избавились/<25>
+	.ASCII	/от этих чудовищ./<25>
+	.ASCII	/ 1: Мы похоронили тела./<25>
+	.ASCIZ	/ 2: Мы оставили тела на пляже./
+TEXT45:	.ASCII	/Мы оставили тела, чтобы их сожрали крабы/<25>
+	.ASCIZ	/и морские птицы./
+TEXT46:	.ASCII	/К сожалению, вернувшиеся поняли,/<25>
+	.ASCII	/Что на острове кто-то есть./<25>
+	.ASCII	/Робинзон и Пятница были убиты/<25>
+	.ASCIZ	/В ходе ужасной охоты на человека./
+TEXT47:	.ASCII	/С помощью своих мушкетов, я смог/<25>
+	.ASCIZ	/вмешаться./
+TEXT48:	.ASCII	/У меня был всего лишь простой нож/<25>
+	.ASCIZ	/для защиты./
 
 ;------------------------------------------------------------------------------
