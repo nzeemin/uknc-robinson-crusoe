@@ -44,7 +44,7 @@ if "%undefg%"=="" (
 
 set /a scrno = 1
 :loopscrno
-if "%scrno%" == "3" goto loopend
+if "%scrno%" == "5" goto loopend
   echo LEVEL %scrno%
   copy /b LEVEL%scrno%.MAC LEVEL.MAC >NUL
   %rt11exe% MACRO/LIST:DK:ROBIN%scrno% ROBIN.MAC /OBJECT:ROBIN%scrno%

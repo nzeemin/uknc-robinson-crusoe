@@ -168,158 +168,145 @@ L48:	.PRMSG	#TEXT48
 ;
 L49:	.PRMSG	#TEXT49
 	.WTKEY
-;
-L50:	.PRMSG	#TEXT50
-	.WTKEY
-;
-L51:	.PRMSG	#TEXT51
-	.WTKEY
-;
-L52:	.PRMSG	#TEXT52
-	.WTKEY
-;
 
 	JMP	TITLE
 
 ;------------------------------------------------------------------------------
 
-TEXT0:
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-TEXT1:	.ASCII	//<25>
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-TEXT2:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT3:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT4:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT5:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT6:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT7:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT8:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT9:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT10:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT11:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT12:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT13:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT14:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT15:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT16:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT17:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT18:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT19:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT20:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT21:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT22:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT23:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT24:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT25:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT26:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT27:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT28:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT29:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT30:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT31:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT32:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT33:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT34:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT35:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT36:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT37:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT38:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT39:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT40:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT41:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT42:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT43:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT44:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT45:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT46:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT47:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT48:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT49:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT50:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT51:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT52:	.ASCII	//<25>
-	.ASCIZ	//
+TEXT1:	.ASCII	/Я осознал лучше, чем когда-либо, красоту/<25>
+	.ASCIZ	/и богатство моего острова./
+TEXT2:	.ASCII	/Поднявшись на холм, я увидел вдали линию/<25>
+	.ASCII	/земли. Я испытал безумное желание/<25>
+	.ASCII	/высадиться там./<25>
+	.ASCII	/ 1: Я захотел построить судно./<25>
+	.ASCIZ	/ 2: Но вскоре я отказался от этого проекта./
+TEXT3:	.ASCII	/Поначалу я попытался восстановить/<25>
+	.ASCII	/спасательную шлюпку после/<25>
+	.ASCII	/кораблекрушения. Это оказалось/<25>
+	.ASCIZ	/невозможным, поэтому:/
+TEXT4:	.ASCII	/ 1: Я решил сделать большую лодку./<25>
+	.ASCII	/ 2: Я отказался от этой идеи./<25>
+	.ASCIZ	/ 3: Я сделал небольшую лодку./
+TEXT5:	.ASCII	/Потому что я слышал, что жители Карибских/
+	.ASCIZ	/островов являются людоедами./<25>
+TEXT6:	.ASCIZ	/Я выбрал огромный кедр./
+TEXT7:	.ASCII	/Но я не смог срубить его из-за отсутствия/
+	.ASCIZ	/инструментов./
+TEXT8:	.ASCII	/Мне понадобилось тридцать пять дней,/<25>
+	.ASCII	/чтобы срубить его, и столько же для его/<25>
+	.ASCIZ	/обработки./
+TEXT9:	.ASCII	/Я испытывал большую гордость, когда она/<25>
+	.ASCII	/была завершена. Это была самая большая/<25>
+	.ASCII	/долблёная лодка, которую я когда-либо/<25>
+	.ASCII	/видел. К сожалению, она была слишком/<25>
+	.ASCIZ	/тяжелой./
+TEXT10:	.ASCII	/Мне оставалось:/<25>
+	.ASCII	/ 1: Попробовать прорыть канал./<25>
+	.ASCII	/ 2: Использовать рычаги./<25>
+	.ASCIZ	/ 3: Восстановить силы./
+TEXT11:	.ASCII	/Я рассчитал, что мне потребуется/<25>
+	.ASCIZ	/двенадцать лет, чтобы привести море сюда./
+TEXT12:	.ASCII	/Я так и не смог сдвинуть её с места/<25>
+	.ASCIZ	/и истощился./
+TEXT13:	.ASCII	/Несмотря на мою глубокую печаль,/<25>
+	.ASCIZ	/я прощаюсь с этим дорогим проектом./
+TEXT14:	.ASCII	/Но мое лицо плохо защищалось и обгорело/<25>
+	.ASCII	/на солнце./<25>
+	.ASCII	/ 1: Я сделал себе зонтик./<25>
+	.ASCIZ	/ 2: Я намазался козьим жиром./
+TEXT15:	.ASCII	/Из козлиной кожи я изготовил красивый/<25>
+	.ASCIZ	/зонтик, который всегда был со мной./
+TEXT16:	.ASCIZ	/Затем я вернулся в свой замок./
+TEXT17:	.ASCII	/Я решил, по крайней мере, обойти остров/<25>
+	.ASCII	/по морю. Я сделал легкую лодку, снабдил/<25>
+	.ASCIZ	/ее мачтой, парусом и припасами./
+TEXT18:	.ASCII	/На 6 год моего правления (или моего /<25>
+	.ASCII	/пленения), я был готов. Я решил:/<25>
+	.ASCII	/ 1: Уехать сразу же./<25>
+	.ASCII	/ 2: Спрятать мою лодку./<25>
+	.ASCII	/ 3: Подняться на возвышенность./<25>
+	.ASCIZ	/ 4: Уничтожить мою лодку./
+TEXT19:	.ASCII	/Я нашел бухту, чтобы укрыться, затем/<25>
+	.ASCIZ	/поднялся на высоту./
+TEXT20:	.ASCII	/Ветер и течения удаляли меня от моего/<25>
+	.ASCII	/острова. Я желал только одного: вернуться/
+	.ASCIZ	/в свой маленький рай./
+TEXT21:	.ASCII	/Робинзон погиб в море после нескольких/<25>
+	.ASCIZ	/дней плавания./
+TEXT22:	.ASCII	/С моего наблюдательного пункта я увидел/<25>
+	.ASCII	/сильные течения. Я ждал три дня, прежде/<25>
+	.ASCIZ	/чем отправиться в приключение./
+TEXT23:	.ASCII	/Я едва не погиб в море. Каким же/<25>
+	.ASCII	/прекрасным мне показался остров/<25>
+	.ASCIZ	/по возвращению./
+TEXT24:	.ASCII	/Если кожа заживет, запах станет еще хуже,/
+	.ASCIZ	/чем боль. Пришло время вернуться./
+TEXT25:	.ASCII	/Я уничтожил свою лодку, опасаясь,/<25>
+	.ASCIZ	/что она выдаст моё присутствие./
+TEXT26:	.ASCII	/После этих печальных переживаний,/<25>
+	.ASCII	/я сильно утомился от плавания./<25>
+	.ASCII	/ 1: Я поблагодарил Бога./<25>
+	.ASCII	/ 2: Я отправился пешком./<25>
+	.ASCIZ	/ 3: Я вернулся в центр острова./
+TEXT27:	.ASCIZ	/Я поблагодарил Господа за его защиту./
+TEXT28:	.ASCII	/Я путешествовал, встречая много черепах/<25>
+	.ASCIZ	/и морских птиц./
+TEXT29:	.ASCII	/Я снова с удовольствием нашел свой/<25>
+	.ASCIZ	/настоящий дом./
+TEXT30:	.ASCII	/Я положил найденные деньги в свой ящик,/<25>
+	.ASCII	/но они быстро покрылись ржавчиной./<25>
+	.ASCII	/ 1: Я выбросил их./<25>
+	.ASCIZ	/ 2: Я сохранил их./
+TEXT31:	.ASCII	/Я сохранил их на всякий случай,/<25>
+	.ASCIZ	/как символ другой жизни./
+TEXT32:	.ASCII	/Я их выбросил, убеждённый/<25>
+	.ASCIZ	/в их бесполезности здесь./
+TEXT33:	.ASCII	/Время плохой погоды наступило. В одну/<25>
+	.ASCII	/ночь, во время сильного шторма,/<25>
+	.ASCII	/ 1: Я поблагодарил Бога./<25>
+	.ASCII	/ 2: Я забрался на высокий утес./<25>
+	.ASCIZ	/ 3: Я укрылся в убежище./
+TEXT34:	.ASCIZ	/Я благодарил Господа за защиту./
+TEXT35:	.ASCII	/Я услышал выстрелы пушек./<25>
+	.ASCII	/Корабль в бедственном положении!/<25>
+	.ASCII	/ 1: Я разжёг большой костёр./<25>
+	.ASCIZ	/ 2: Я спрятался./
+TEXT36:	.ASCII	/Обеспокоенный и привыкший к годам/<25>
+	.ASCIZ	/одиночества, я предпочел не показываться./
+TEXT37:	.ASCII	/Он горел всю ночь. На утро я различил/<25>
+	.ASCII	/в тумане корабль./<25>
+	.ASCII	/ 1: Я бросился к нему./<25>
+	.ASCIZ	/ 2: Я покинул берег./
+TEXT38:	.ASCII	/К сожалению, это был разбитый корабль./<25>
+	.ASCII	/ 1: Я захотел его посетить./<25>
+	.ASCII	/ 2: Я удалился./<25>
+	.ASCIZ	/ 3: Я взял ружье./
+TEXT39:	.ASCII	/Робинзон, плохо себя чувствуя,/<25>
+	.ASCIZ	/скончался во время сезона дождей./
+TEXT40:	.ASCII	/За два часа моя лодка доставила меня/<25>
+	.ASCII	/к кораблю. Я обнаружил там собаку,/<25>
+	.ASCII	/единственный признак жизни, и бочку,/<25>
+	.ASCIZ	/полную богатств./
+TEXT41:	.ASCII	/Я привез свои находки, прежде чем судно/<25>
+	.ASCII	/утонуло./<25>
+	.ASCII	/ 1: Я спас собаку./
+	.ASCIZ	/ 2: Я убил бедную тварь./
+TEXT42:	.ASCII	/Я не смог добраться до разбитого судна/<25>
+	.ASCIZ	/без лодки./
+TEXT43:	.ASCII	/Если там и был кораблекрушение,/<25>
+	.ASCIZ	/море быстро стерло следы./
+TEXT44:	.ASCII	/Я вернулся в центр острова, чтобы/<25>
+	.ASCII	/заняться своим загоном для коз./<25>
+	.ASCII	/ 1: Я посадил поле пшеницы./<25>
+	.ASCIZ	/ 2: Я вернулся к своей пещере./
+TEXT45:	.ASCIZ	/Я вернулся к своему настоящему жилищу./
+TEXT46:	.ASCIZ	/Я прокопал борозды своим мечом./
+TEXT47:	.ASCII	/Но птицы пожрали зерно./<25>
+	.ASCIZ	/Я потерял свой урожай./
+TEXT48:	.ASCII	/К счастью, моя собака удерживала птиц/<25>
+	.ASCIZ	/на расстоянии. Я собрал хороший урожай./
+TEXT49:	.ASCII	/Я занимался своими личными делами./<25>
+	.ASCII	/ 1: Я умылся и побрился./
+	.ASCIZ	/ 2: Я сделал себе зонтик./
 
 ;------------------------------------------------------------------------------

@@ -209,6 +209,24 @@ TEXT1:	.ASCII	//<25>
 	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
 	.ASCII	/deserunt mollit anim id est laborum./
 	.BYTE	0
+
+	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
+	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
+	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
+	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
+	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
+	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
+	.ASCII	/deserunt mollit anim id est laborum./
+	.BYTE	0
+
+	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
+	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
+	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
+	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
+	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
+	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
+	.ASCII	/deserunt mollit anim id est laborum./
+	.BYTE	0
 TEXT2:	.ASCII	//<25>
 	.ASCIZ	//
 TEXT3:	.ASCII	//<25>

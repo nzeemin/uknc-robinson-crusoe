@@ -17,14 +17,14 @@ class Program
         // Готовим общий файл ROBIN.DAT, включающий все уровни
         // на каждый уровень: сжатый экран, сжатые вставки, код + текст
 
-        Console.WriteLine($" Scr |   ScrLz | ScrExLz | Cod+Txt |  Total Blocks ");
+        Console.WriteLine($" Scr |   ScrLz | ScrExLz | Cod+Txt |   Total Blocks ");
         var bytesAll = new List<byte>();
 
         // Сначала сжатый заголовочный экран
         var binTitleLz = File.ReadAllBytes("TITLZ.BIN");
         bytesAll.AddRange(binTitleLz);
         AlignToBlock(bytesAll);
-        Console.WriteLine($"title    {binTitleLz.Length,5}       ---     ---       {bytesAll.Count,5} {bytesAll.Count / 512,5}");
+        Console.WriteLine($"title    {binTitleLz.Length,5}       ---     ---       {bytesAll.Count,5}  {bytesAll.Count / 512,5}");
 
         // Затем все уровни
         var infos = new List<LevelInfo>();
@@ -53,12 +53,12 @@ class Program
             info.CodeBlock = info.ExtBlock + (binScrLzExSize + 511) / 512;
             infos.Add(info);
             bytesAll.AddRange(bytes);
-            Console.WriteLine($"  {scrno}      {binScrLzSize,5}     {binScrLzExSize,5}    {binSav.Count,5}      {bytes.Count,5} {bytes.Count / 512,5}");
+            Console.WriteLine($"  {scrno}      {binScrLzSize,5}     {binScrLzExSize,5}    {binSav.Count,5}      {bytes.Count,5}  {bytes.Count / 512,5}");
         }
         
-        Console.WriteLine($" TOTAL:                               {bytesAll.Count,6} {bytesAll.Count / 512,5}");
+        Console.WriteLine($" TOTAL:                               {bytesAll.Count,6}  {bytesAll.Count / 512,5}");
         File.WriteAllBytes("ROBIN.DAT", bytesAll.ToArray());
-        Console.WriteLine("Saved ROBIN.DAT");
+        Console.WriteLine($"Saved ROBIN.DAT, {bytesAll.Count} bytes");
 
         var levelsLines = new List<string>();
         levelsLines.Add($"TITLZS = {binTitleLz.Length}.");

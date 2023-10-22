@@ -187,136 +187,123 @@ L52:	.PRMSG	#TEXT52
 
 ;------------------------------------------------------------------------------
 
-TEXT0:
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-
-	.ASCII	/Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod/
-	.ASCII	/tempor incididunt ut labore et dolore magna aliqua. Ut enim ad/
-	.ASCII	/minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip/
-	.ASCII	/ex ea commodo consequat. Duis aute irure dolor in reprehenderit/
-	.ASCII	/in voluptate velit esse cillum dolore eu fugiat nulla pariatur. /
-	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
-	.ASCII	/deserunt mollit anim id est laborum./
-	.BYTE	0
-TEXT1:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT2:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT3:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT4:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT5:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT6:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT7:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT8:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT9:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT10:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT11:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT12:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT13:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT14:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT15:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT16:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT17:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT18:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT19:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT20:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT21:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT22:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT23:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT24:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT25:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT26:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT27:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT28:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT29:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT30:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT31:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT32:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT33:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT34:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT35:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT36:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT37:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT38:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT39:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT40:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT41:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT42:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT43:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT44:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT45:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT46:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT47:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT48:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT49:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT50:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT51:	.ASCII	//<25>
-	.ASCIZ	//
-TEXT52:	.ASCII	//<25>
-	.ASCIZ	//
+TEXT1:	.ASCII	/Внутри было просторно и темно./<25>
+	.ASCII	/ 1: Я оставил свои запасы снаружи./<25>
+	.ASCIZ	/ 2: Я убрал свои продукты./
+TEXT2:	.ASCII	/чтобы защитить их от дождя./
+TEXT3:	.ASCII	/Многие из них сгнили из-за дождя./
+TEXT4:	.ASCII	/ 1. Я зажег огонь./<25>
+	.ASCII	/ 2. Я сделал свечу./<25>
+	.ASCIZ	/ 3. Я рисовал на стенах./
+TEXT5:	.ASCII	/Я изобразил свою печальную историю/<25>
+	.ASCIZ	/на стенах./
+TEXT6:	.ASCII	/Огонь, раздуваемый потоком воздуха,/<25>
+	.ASCIZ	/воспламенил порох./
+TEXT7:	.ASCIZ	/Робинзон погиб в ужасном взрыве.../
+TEXT8:	.ASCII	/Наконец, я видел!/<25>
+	.ASCII	/ 1: Я разместил факелы повсюду./<25>
+	.ASCII	/ 2: Я сделал стол и стулья./<25>
+	.ASCIZ	/ 3: Я отправился в море./
+TEXT9:	.ASCIZ	/Факелы подожгли запасы./
+TEXT10:	.ASCIZ	/Затем я отдохнул и стал ремесленником.../
+TEXT11:	.ASCII	/ 1: Я работал с глиной./<25>
+	.ASCII	/ 2: Я шил одежду./<25>
+	.ASCIZ	/ 3: Я делал алкоголь./
+TEXT12:	.ASCIZ	/Я сделал плохой алкоголь.../
+TEXT13:	.ASCII	/Робинзон был унесен течением./<25>
+	.ASCIZ	/Его тело так и не было найдено./
+TEXT14:	.ASCII	/Я изготовил довольно удачную мебель./<25>
+	.ASCII	/ 1: Я уселся за стол, чтобы выпить./<25>
+	.ASCII	/ 2: Я отправился в море./<25>
+	.ASCIZ	/ 3: Я сделал корзины из ивы./
+TEXT15:	.ASCIZ	/Крысы напали на мой урожай пшеницы./
+TEXT16:	.ASCIZ	/Я переложил пшеницу в корзины./
+TEXT17:	.ASCII	/На два дня я отправился исследовать/<25>
+	.ASCII	/остров./
+	.ASCIZ	/Я обнаружил виноград и лимоны./
+TEXT18:	.ASCII	/ 1: Я не осмелился трогать дикие фрукты./<25>
+	.ASCII	/ 2: Я принес очень спелые лимоны/<25>
+	.ASCII	/    и виноград./<25>
+	.ASCIZ	/ 3: Я принес разнообразные фрукты./
+TEXT19:	.ASCIZ	/Я положил фрукты в корзину./
+TEXT20:	.ASCII	/Я их положил у входа в пещеру на землю,/<25>
+	.ASCIZ	/так как не было корзин./
+TEXT21:	.ASCII	/Я смог сделать достаточно удобную/<25>
+	.ASCII	/глиняную посуду, а затем решил заняться/
+	.ASCIZ	/шитьем./
+TEXT22:	.ASCII	/Они все испортились./<25>
+	.ASCII	/ 1: Я отказался./<25>
+	.ASCIZ	/ 2: Я вернулся, чтобы забрать еще./
+TEXT23:	.ASCIZ	/Цинга покончила с Робинзоном./
+TEXT24:	.ASCII	/Я вернулся, чтобы собрать зеленые/<25>
+	.ASCIZ	/виноградины и высушил их./
+TEXT25:	.ASCII	/На острове обитали разноцветные попугаи./<25>
+	.ASCII	/ 1: Я убивал их, чтобы питаться./<25>
+	.ASCIZ	/ 2: Я пытался приручить их./
+TEXT26:	.ASCII	/Я сделал простую, но удобную одежду/<25>
+	.ASCII	/из кожи коз и с последней парусиной/<25>
+	.ASCIZ	/с корабля./
+TEXT27:	.ASCII	/Я обнаружил, что высушенный виноград был/<25>
+	.ASCII	/для них изысканным угощением./<25>
+	.ASCII	/Со временем, Пепин стал преданным/
+	.ASCIZ	/спутником./
+TEXT28:	.ASCII	/Я его научил:/<25>
+	.ASCII	/ 1: Хитроумным трюкам./<25>
+	.ASCIZ	/ 2: Произносить несколько слов./
+TEXT29:	.ASCII	/Потом я решил организовать свой новый/<25>
+	.ASCII	/дом. Для своих ружей:/<25>
+	.ASCII	/ 1: Я положил их на землю./<25>
+	.ASCII	/ 2: Я спрятал их в яму./<25>
+	.ASCIZ	/ 3: Я повесил их./
+TEXT30:	.ASCII	/Ржавчина в этом тропическом климате/<25>
+	.ASCII	/быстро сделала их непригодными/<25>
+	.ASCIZ	/для использования./
+TEXT31:	.ASCII	/Ржавчина в этом тропическом климате/<25>
+	.ASCII	/быстро сделала их непригодными/<25>
+	.ASCIZ	/для использования./
+TEXT32:	.ASCIZ	/Я повесил их на гвозди на стенах./
+TEXT33:	.ASCII	/Аккий шторм вызвал обрушение земли/<25>
+	.ASCII	/с крыши моей пещеры./<25>
+	.ASCII	/ 1: Я убрал завалы./<25>
+	.ASCIZ	/ 2: Я укрепил крышу./
+TEXT34:	.ASCII	/Я убрал и очистил разрушения./<25>
+	.ASCII	/ 1: Затем я забыл об инциденте./<25>
+	.ASCIZ	/ 2: Я решил укрепить потолок./
+TEXT35:	.ASCII	/Я укрепил потолок с помощью крупных/<25>
+	.ASCIZ	/балок с корабля./
+TEXT36:	.ASCII	/Но без инструментов я не мог сделать/<25>
+	.ASCIZ	/ничего прочного./
+TEXT37:	.ASCII	/Я продолжил обустройство./<25>
+	.ASCII	/ 1: Я захотел сделать огромную кровать./<25>
+	.ASCII	/ 2: Я сделал полки для продуктов./<25>
+	.ASCIZ	/ 3: Я попытался изготовить вино./
+TEXT38:	.ASCIZ	/Крысы съели большую часть моих запасов./
+TEXT39:	.ASCII	/Я гордился результатом, и мои запасы были/
+	.ASCIZ	/защищены от грызунов./
+TEXT40:	.ASCII	/Это был неудачный опыт, и крысы съели/<25>
+	.ASCIZ	/большую часть моих запасов./
+TEXT41:	.ASCII	/Раздраженный бездействием,/<25>
+	.ASCII	/ 1: Я с нетерпением ждал сезона сухой/<25>
+	.ASCII	/    погоды./<25>
+	.ASCIZ	/ 2: Я выходил во время дождей./
+TEXT42:	.ASCIZ	/Кожа животных защитила меня./
+TEXT43:	.ASCII	/Влажность проникла в мои кости,/<25>
+	.ASCIZ	/и я заболел./
+TEXT44:	.ASCIZ	/Я сделал бульон из козы, что спасло меня./
+TEXT45:	.ASCIZ	/Робинзон умирает без заботы и помощи./
+TEXT46:	.ASCIZ	/Я отправился исследовать мой остров.../
+TEXT47:	.ASCIZ	/Робинзон умирает без заботы и помощи./
+TEXT48:	.ASCII	/Новый ужасный шторм разразился,/<25>
+	.ASCIZ	/но моё убежище выдержало./
+TEXT49:	.ASCII	/Я решил:/<25>
+	.ASCII	/ 1: Увеличить его./<25>
+	.ASCII	/ 2: Научить моего попугая ловить крыс./<25>
+	.ASCIZ	/ 3: Наслаждаться своей новой жизнью./
+TEXT50:	.ASCII	/Новый ужасный шторм разразился,/<25>
+	.ASCII	/убежище обрушилось на Робинзона,/<25>
+	.ASCIZ	/погребая его навсегда./
+TEXT51:	.ASCII	/Но мне не хватало света для дальнейшего/<25>
+	.ASCIZ	/копания./
+TEXT52:	.ASCIZ	/Мне удалось прокопать новый вход сзади./
 
 ;------------------------------------------------------------------------------

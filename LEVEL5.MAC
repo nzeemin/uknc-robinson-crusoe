@@ -229,7 +229,9 @@ TEXT1:	.ASCII	//<25>
 	.ASCII	/Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia/
 	.ASCII	/deserunt mollit anim id est laborum./
 	.BYTE	0
-TEXT2:	.ASCII	//<25>
+TEXT2:	.ASCII	/Взволнованный,/<25>
+	.ASCII	//<25>
+	.ASCII	//<25>
 	.ASCIZ	//
 TEXT3:	.ASCII	//<25>
 	.ASCIZ	//
