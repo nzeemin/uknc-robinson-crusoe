@@ -2,7 +2,7 @@ TITLZS = 8414.
 
 LEVELS:: ; ScrBlk, ScrSize, ExtBlk, ExtSize, CodeBlk, CodeSize
 	.WORD	 17.,  2673.,    28.,  2716.,    39.,  3328.	; Level 1
-	.WORD	 52.,  2951.,    64.,  3170.,    77.,  3072.	; Level 2
+	.WORD	 52.,  2938.,    64.,  3296.,    77.,  3072.	; Level 2
 	.WORD	 89.,  2844.,   101.,  3486.,   115.,  2816.	; Level 3
 	.WORD	126.,  3247.,   139.,  2816.,   150.,  2816.	; Level 4
 	.WORD	161.,  2496.,   171.,  2742.,   182.,  2560.	; Level 5
