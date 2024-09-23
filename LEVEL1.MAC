@@ -127,7 +127,7 @@ L13:	.PRINT	#TEXT13
 2$:
 	BIT	#4, R0			; бит 2 = Оружие
 	BEQ	3$
-	INC	IGUN
+	INC	IGUNS
 3$:
 	BIT	#10, R0			; бит 3 = Деньги
 	BEQ	4$
@@ -332,7 +332,7 @@ L38:	.PRMSG	#TEXT38
 ; Охотиться
 L39:
 ; Если есть оружие, то переход на L40
-	TST	IGUN
+	TST	IGUNS
 	BNE	L40
 ; Я хотел охотиться, но у меня не было оружия.
 	.PRMSG	#TEXT39
