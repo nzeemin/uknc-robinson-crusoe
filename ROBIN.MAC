@@ -32,13 +32,13 @@ START::
 	CMP	#117776, R0
 	BHIS	1$
 	MOV	#MEMERR, R1
-	JMP	FERROR
+	BR	FERROR
 1$:
 ; Открываем файл данных
 	.LOOKUP	#FAREA, #0, #FSPEC	; Открываем файл
 	BCC	10$
 	MOV	#FERR, R1
-	JMP	FERROR
+	BR	FERROR
 10$:
 ; Отправить программу в ПП
 	CALL	PPLOAD			; Установить программу в памяти ПП
@@ -59,7 +59,7 @@ TITLE:
 	.READW	R5, #0			; Читаем данные с диска
 	BCC	30$
 	MOV	#FERR, R1
-	JMP	FERROR
+	BR	FERROR
 30$:	CALL	PRDOT			; ..
 ; Распаковать заголовочный экран на адреса 052400-120000, занимает 19200. = 045400 байт
 	MOV	#LBEGIN, R1
@@ -95,7 +95,7 @@ STARTG:
 	CALL	PAUSE
 ; Загрузить уровень 1
 	MOV	#LEVELS, R0
-	JMP	LOALEV
+	BR	LOALEV
 ; Обычное завершение программы
 FINISH:
 	MOV	#EXITSC, R1		; Строка очистки экрана перед выходом
@@ -115,7 +115,7 @@ LOALEV:	CALL	PRDOT			; .
 	.READW	R5, #0
 	BCC	10$
 	MOV	#FERR, R1
-	JMP	FERROR
+	BR	FERROR
 10$:	CALL	PRDOT			; ..
 ; Распаковать экран на адреса 052400-120000, занимает 19200. = 045400 байт
 	MOV	#LBEGIN, R1
@@ -137,7 +137,7 @@ LOALEV:	CALL	PRDOT			; .
 	.READW	R5, #0
 	BCC	20$
 	MOV	#FERR, R1
-	JMP	FERROR
+	BR	FERROR
 20$:
 ; Распаковать сжатые вставки
 	MOV	#LBEGIN, R1
@@ -151,7 +151,7 @@ LOALEV:	CALL	PRDOT			; .
 	.READW	R5, #0
 	BCC	30$
 	MOV	#FERR, R1
-	JMP	FERROR
+	BR	FERROR
 30$:
 	;CALL	PRDOT			; ....
 ; Приготовить вставки под экраном
@@ -279,8 +279,7 @@ PPLOAD:
 PPDONE:
 	MOVB	#2, PPBCMD		; Команда "Освободить память"
 	MOV	#PPSTART, PPBACP	; Адрес блока в ОЗУ ЦП
-	CALL	PPSEND			; Отправляем блок параметров
-	RETURN
+	BR	PPSEND			; Отправляем блок параметров / RETURN
 ; Подпрограмма запуска программы в памяти ПП
 ; R1 = адрес подпрограммы
 PPRUN:
@@ -343,7 +342,7 @@ PPREX2:
 	MOV	R1, <PPEXCH+2>		; адрес куда
 	MOV	R2, <PPEXCH+4>		; W/H
 	MOV	#PPEXT2, R1
-	JMP	PPRUN
+	BR	PPRUN
 
 ; Перевод из X/Y обычного экрана в адрес; Y считаем от 80.-й строки
 ; R1 = X/Y
@@ -665,7 +664,7 @@ PRDOT:
 20$:	TSTB	@#177564		; Источник канала 0 готов?
 	BPL	20$			; нет => ждём
 	MOV	#56, @#177566		; передаём символ '.' в канал 0
-	BR	RETN
+	RETURN
 
 ; Подпрограмма: Ожидание символа с клавиатуры: R0 = полученный символ
 WTKEY:	TSTB	@#177560
@@ -983,7 +982,7 @@ IEND:
 LBEGIN::
 .INCLUDE /LEVEL.MAC/
 LEND::
-ESTRAT = LBEGIN+2
+;ESTRAT = LBEGIN+2
 
 ;------------------------------------------------------------------------------
 	.END	START
