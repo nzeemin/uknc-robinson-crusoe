@@ -25,6 +25,9 @@ ESTRAT:	;	X    Y    W    H
 
 ; Действительно, там был корабль
 C0:	; --- chunk 0  [0..48) ---
+	.SHEXT	0.,22.,4.
+	.SHEXT	3.,16.,8.
+	.SHEXT	4.,37.,16.
 	.PRMSG	#TEXT1
 	.WTKEY
 ;
@@ -45,6 +48,7 @@ L3:	ADD	#2, IARMS
 C1:	; --- chunk 1  [48..85) ---
 L4:	.PRMSG	#TEXT4
 	.WTKEY
+	.SHEXT	12.,1.,1.
 ;
 ; Я слишком поспешил, и меня поймали
 	.PRMSG	#TEXT5
@@ -60,14 +64,19 @@ L4:	.PRMSG	#TEXT4
 C2:	; --- chunk 2  [85..151) ---
 L7:	.PRMSG	#TEXT7
 	.WTKEY
+	.SHEXT	14.,34.,1.
+	.FRAGM	22.,4.,3.,8.
 ;
 ; Шлюпка отправилась в море, направляясь
 	.PRMSG	#TEXT8
 	.WTKEY
+	.ANIM	1.,7., 0.,11., 30
 ;
 ; Они высадили двух английских заключенных.
 	.PRMSG	#TEXT9
 	.WTKEY
+	.FRAGM	0.,11.,7.,6.
+	.SHEXT	5.,2.,0.
 ;
 ;  1: Я представился вождю бандитов.
 	.PRMSG	#TEXT10
@@ -78,7 +87,8 @@ L7:	.PRMSG	#TEXT7
 ;
 ; Я пригласил его посетить мой дом.
 C3:	; --- chunk 3  [151..239) ---
-L11:	.PRMSG	#TEXT11
+L11:	.FRAGM	34.,1.,5.,7.
+	.PRMSG	#TEXT11
 	.WTSEL	#062
 	.WORD	L12		; 1. Но оставил Пятницу на улице.
 	.WORD	L14		; 2. Я подал ему напиток.
@@ -118,19 +128,23 @@ L17G:	CMP	IFRGUN, #0
 ;
 ; Мы их удивили, но Пятница не умел
 C4:	; --- chunk 4  [239..293) ---
+	.FRAGM	34.,1.,5.,7.
 	.PRMSG	#TEXT17
 	.WTKEY
 	CLR	ISCRAT
 	JMP	GAMEOVER
 ;
 ; Мы застали их врасплох, затем,
-L18:	.PRMSG	#TEXT18
+L18:	.FRAGM	34.,1.,5.,7.
+	.SHEXT	13.,1.,1.
+	.PRMSG	#TEXT18
 	.WTSEL	#062
 	.WORD	L19		; 1. Я узнал настоящих виновных.
 	.WORD	L22		; 2. Мы убили всех мятежников.
 ;
 ; Таким образом, это был мятеж.
 C5:	; --- chunk 5  [293..336) ---
+;TODO: bytecode IFOPT2 draws FRAGM 1.,1.,12.,11. + SHEXT 14.,34.,1. here (Robinson/Vendredi abandon officers) -- no matching WORD target found in port L19 3-way choice, verify mapping
 L19:	.PRMSG	#TEXT19
 	.WTSEL	#063
 	.WORD	L24		; 1. Я предложил помощь капитану.
@@ -189,9 +203,12 @@ L28:	.PRMSG	#TEXT28
 ;
 ; Еще один баркас высаживался!
 C8:	; --- chunk 8  [436..472) ---
+	.FRAGM	1.,1.,12.,11.
+	.SHEXT	2.,5.,7.
 	.PRMSG	#TEXT29
 	.WTKEY
 	ADD	#1, ICREW
+	.FRAGM	1.,1.,12.,11.
 ;
 ;  1: Мы повели мятежников к центру
 	.PRMSG	#TEXT30
@@ -201,8 +218,11 @@ C8:	; --- chunk 8  [436..472) ---
 ;
 ; Еще одна шлюпка приближалась!
 C9:	; --- chunk 9  [472..527) ---
+	.FRAGM	1.,1.,12.,11.
+	.SHEXT	2.,5.,7.
 	.PRMSG	#TEXT31
 	.WTKEY
+	.FRAGM	1.,1.,12.,11.
 ;
 ;  1: Мы провели тех, кто находился
 	.PRMSG	#TEXT32
@@ -223,7 +243,8 @@ L34:	.PRMSG	#TEXT34
 ;
 ; Робинсон и Пятница оставались в тайне
 C10:	; --- chunk 10  [527..556) ---
-L35:	.PRMSG	#TEXT35
+L35:	.SHEXT	14.,34.,1.
+	.PRMSG	#TEXT35
 	.WTKEY
 ;
 ; Они умерли от старости на своем острове.
@@ -234,7 +255,10 @@ L35:	.PRMSG	#TEXT35
 ;
 ; Было легко подстеречь их поочередно
 C11:	; --- chunk 11  [556..605) ---
-L37:	.PRMSG	#TEXT37
+L37:	.FRAGM	1.,1.,9.,9.
+	.FRAGM	1.,1.,12.,11.
+	.SHEXT	12.,1.,1.
+	.PRMSG	#TEXT37
 	.WTKEY
 ;
 ; Капитан сказал мне, кто из заключенных
@@ -252,12 +276,16 @@ L39A:	ADD	#1, ICREW
 ;
 ; Мы атаковали в полную силу.
 C12:	; --- chunk 12  [605..680) ---
-L40:	.PRMSG	#TEXT40
+L40:	.FRAGM	1.,1.,9.,9.
+	.PRMSG	#TEXT40
 	.WTKEY
+	.FRAGM	1.,1.,12.,11.
+	.SHEXT	12.,1.,1.
 	CMP	ICREW, #1
 	BGT	L40C
 	JMP	L41
 L40C:	SUB	#1, ICREW
+;TODO: bytecode IFCOND1 death branch draws FRAGM 1.,1.,12.,11. + SHEXT 14.,34.,1. + TEXT "trop nombreux" here -- not present in port L40C, verify if this path was intentionally dropped or needs restoring
 	JMP	C6
 ;
 ; Но их было слишком много...
@@ -291,7 +319,9 @@ L45:	.PRMSG	#TEXT45
 ;
 ; Нам пришлось в спешке укрыться в моем замке.
 C14:	; --- chunk 14  [731..798) ---
-L46:	.PRMSG	#TEXT46
+L46:	.FRAGM	1.,1.,12.,11.
+	.SHEXT	14.,34.,1.
+	.PRMSG	#TEXT46
 	.WTKEY
 	CMP	ILADDR, #1
 	BEQ	L47
@@ -315,8 +345,11 @@ L49:	.PRMSG	#TEXT49
 ;
 ; Мы сели на вторую шлюпку вместе с нашими
 C15:	; --- chunk 15  [798..831) ---
+	.FRAGM	1.,1.,12.,11.
+	.SHEXT	2.,5.,7.
 	.PRMSG	#TEXT50
 	.WTKEY
+	.FRAGM	1.,1.,12.,11.
 ;
 ; Атака была успешной. После ареста лидера
 	.PRMSG	#TEXT51
@@ -329,8 +362,10 @@ L52G:	CMP	IARMS, #2
 ;
 ; Вооружившись и отдохнув, мы атаковали
 C16:	; --- chunk 16  [831..890) ---
+	.SHEXT	12.,1.,1.
 	.PRMSG	#TEXT52
 	.WTKEY
+	.FRAGM	1.,1.,12.,11.
 	JMP	C13
 ;
 ; Но, плохо вооруженные, мы вынуждены были
@@ -382,23 +417,31 @@ L59:	.PRMSG	#TEXT59
 ;
 ;  1: Я сказал Пятнице остаться на острове.
 C19:	; --- chunk 19  [976..1016) ---
+	.SHEXT	12.,1.,1.
 	.PRMSG	#TEXT60
 	.WTSEL	#062
 	.WORD	L61		; 1. Я сказал Пятнице остаться на острове.
 	.WORD	L62		; 2. Я хотел, чтобы Пятница пошел со мной.
 ;
 ; Я всегда сожалел о своем поступке,
-L61:	.PRMSG	#TEXT61
+L61:	.SHEXT	11.,1.,1.
+	.PRMSG	#TEXT61
 	.WTKEY
 	JMP	C20
 ;
 ; Он остался моим верным спутником
-L62:	.PRMSG	#TEXT62
+L62:	.SHEXT	11.,1.,1.
+	.PRMSG	#TEXT62
 	.WTKEY
 	JMP	C20
 ;
 ; Корабль отправился в путь, и я долго
 C20:	; --- chunk 20  [1016..1057) ---
+	.FRAGM	1.,1.,12.,11.
+	.SHEXT	8.,12.,4.
+	.SHEXT	9.,25.,3.
+	.SHEXT	10.,37.,16.
+	.SHEXT	6.,10.,0.
 	.PRMSG	#TEXT63
 	.WTKEY
 ;

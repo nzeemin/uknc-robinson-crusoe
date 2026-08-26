@@ -35,20 +35,25 @@ C0:	; --- chunk 0  [0..70) ---
 ; Я приготовил для него спальное место
 L2:	.PRMSG	#TEXT2
 	.WTKEY
+	.SHEXT	8.,30.,1.
 	JMP	C1
 ;
 ; Я построил для него милую хижину
 L3:	.PRMSG	#TEXT3
+	.SHEXT	0.,34.,7.
 	.WTKEY
+	.SHEXT	8.,30.,1.
 	MOV	#1, ITRUST
 	JMP	C1
 ;
 ; Я привязал его снаружи, осторожничая.
 L4:	.PRMSG	#TEXT4
+	.SHEXT	8.,30.,1.
 	.WTKEY
 ;
 ; На следующий день я отвел его
 C1:	; --- chunk 1  [70..95) ---
+	.SHEXT	6.,10.,1.
 	.PRMSG	#TEXT5
 	.WTKEY
 ;
@@ -61,14 +66,20 @@ C1:	; --- chunk 1  [70..95) ---
 ;
 ; После смерти Пятницы я остался одиноким
 C2:	; --- chunk 2  [95..124) ---
-L7:	.PRMSG	#TEXT7
+L7:	.FRAGM	10.,1.,13.,10.
+	.FRAGM	30.,1.,9.,10.
+	.SHEXT	7.,10.,1.
+	.PRMSG	#TEXT7
 	.WTKEY
 	CLR	IFRALV
 	JMP	C20
 ;
 ; Расчувствовавшись, я решил научить
 C3:	; --- chunk 3  [124..160) ---
-L8:	.PRMSG	#TEXT8
+L8:	.FRAGM	10.,1.,13.,10.
+	.FRAGM	30.,1.,9.,10.
+	.SHEXT	7.,10.,1.
+	.PRMSG	#TEXT8
 	.WTKEY
 ;
 ;  1: Я решил воспользоваться своей силой.
@@ -96,25 +107,35 @@ L11:	.PRMSG	#TEXT11
 ;
 ; Очень медленно я приучил его к оружию,
 C6:	; --- chunk 6  [206..239) ---
-L12:	.PRMSG	#TEXT12
+L12:	.FRAGM	30.,1.,9.,10.
+	.SHEXT	4.,1.,1.
+	.SHEXT	5.,10.,1.
+	.PRMSG	#TEXT12
 	.WTKEY
 	MOV	#1, IFRGUN
+	.FRAGM	1.,1.,9.,9.
+	.FRAGM	10.,1.,13.,10.
 	JMP	C7
 ;
 ; Вдохновленный его успехами,
 C7:	; --- chunk 7  [239..266) ---
-L13:	.PRMSG	#TEXT13
+L13:	.FRAGM	30.,1.,9.,10.
+	.SHEXT	1.,15.,9.
+	.PRMSG	#TEXT13
 	.WTSEL	#062
 	.WORD	L13B		; 1. Я научил его говорить.
 	.WORD	L22		; 2. Я провел ему экскурсию по моим владениям, ведя себя как хозяин.
 ;
 L13B:	MOV	#1, IFRTLK
+	.FRAGM	15.,9.,7.,9.
 	JMP	C8
 ;
 ; Он быстро научился общаться...
 C8:	; --- chunk 8  [266..319) ---
 	.PRMSG	#TEXT14
+	.SHEXT	8.,30.,1.
 	.WTKEY
+;TODO: loop draws 2 sprite-pairs alternating (atlas9+11 vs atlas10+12), no .ANIM fit
 ;
 ;  1: Я накормил его, чтобы он набрал вес.
 	.PRMSG	#TEXT15
@@ -158,24 +179,35 @@ L20:	.PRMSG	#TEXT20
 	JMP	C12
 ;
 ; Мне пришлось его убить.
-L21:	.PRMSG	#TEXT21
+L21:	.SHEXT	1.,15.,9.
+	.SHEXT	7.,10.,1.
+	.PRMSG	#TEXT21
 	.WTKEY
+	.FRAGM	15.,9.,7.,9.
+	.FRAGM	10.,1.,13.,10.
 	JMP	C2
 ;
 ; Он был поражен моими устройствами.
 C11:	; --- chunk 11  [432..473) ---
 L22:	.PRMSG	#TEXT22
 	.WTKEY
+	.SHEXT	6.,10.,1.
+	.SHEXT	8.,30.,1.
 	ADD	#1, ITRUST
 ;
 ; Он понял, что должен служить мне.
 	.PRMSG	#TEXT23
 	.WTKEY
+	.FRAGM	10.,1.,13.,10.
+	.FRAGM	30.,1.,9.,10.
 	JMP	C12
 ;
 ; Он был умелым. Он быстро стал хорошим
 C12:	; --- chunk 12  [473..501) ---
-L24:	.PRMSG	#TEXT24
+L24:	.FRAGM	30.,1.,9.,10.
+	.SHEXT	1.,15.,9.
+	.SHEXT	2.,29.,16.
+	.PRMSG	#TEXT24
 	.WTKEY
 ;
 ;  1: Я одел его.
@@ -186,7 +218,9 @@ L24:	.PRMSG	#TEXT24
 ;
 ; Прежде всего, я надел его в морскую
 C13:	; --- chunk 13  [501..551) ---
-L26:	.PRMSG	#TEXT26
+L26:	.FRAGM	15.,9.,7.,9.
+	.SHEXT	3.,24.,12.
+	.PRMSG	#TEXT26
 	ADD	#1, ITRUST
 	.WTSEL	#062
 	.WORD	L27		; 1. Я дал ему пояс с ножом и винтовкой.
@@ -215,7 +249,9 @@ L29:	.PRMSG	#TEXT29
 ;
 ; Пятница объяснил мне, как построить
 C15:	; --- chunk 15  [575..603) ---
-L31:	.PRMSG	#TEXT31
+L31:	.FRAGM	15.,9.,7.,9.
+	.SHEXT	8.,30.,1.
+	.PRMSG	#TEXT31
 	.WTKEY
 ;
 ;  1: Я успокоил его.
@@ -226,7 +262,9 @@ L31:	.PRMSG	#TEXT31
 ;
 ; Сердце мое разрывалось, но я решил:
 C16:	; --- chunk 16  [603..623) ---
-L33:	.PRMSG	#TEXT33
+L33:	.FRAGM	15.,9.,7.,9.
+	.SHEXT	8.,30.,1.
+	.PRMSG	#TEXT33
 	SUB	#1, ITRUST
 	.WTSEL	#062
 	.WORD	L7		; 1. Убить его.
@@ -234,7 +272,10 @@ L33:	.PRMSG	#TEXT33
 ;
 ; Мы жили очень счастливо в течение
 C17:	; --- chunk 17  [623..662) ---
-L34:	.PRMSG	#TEXT34
+L34:	.FRAGM	30.,1.,9.,10.
+	.SHEXT	6.,10.,1.
+	.SHEXT	8.,30.,1.
+	.PRMSG	#TEXT34
 	.WTKEY
 	CMP	ITRUST, #0
 	BLE	L35
@@ -253,12 +294,15 @@ L35:	.PRMSG	#TEXT35
 ;
 ; Пятница побежал предупредить Робинзона.
 C19:	; --- chunk 19  [687..725) ---
+;TODO: bytecode has DRAW+loop (2 sprite-pairs) here, content mismatch with port TEXT37 -- verify chunk mapping before implementing
 	.PRMSG	#TEXT37
 	.WTKEY
 	.LEVEL	7
 ;
 ; Робинзон старел в одиночестве.
 C20:	; --- chunk 20  [725..758) ---
+	.FRAGM	10.,1.,13.,10.
+	.SHEXT	6.,10.,1.
 	.PRMSG	#TEXT38
 	.WTKEY
 ;

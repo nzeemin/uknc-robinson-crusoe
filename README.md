@@ -9,6 +9,7 @@ Porting game Robinson Cruesoe (Coktel Vision, 1987) to UKNC (Elektronika MS 0511
 
 ![](screenshot/chapter-one.png)
 
+
 ## Оригинал
 
 Это графический квест, основанный на известной книге. Время от времени игроку нужно делать выбор из нескольких предложенных вариантов.
@@ -19,6 +20,7 @@ Porting game Robinson Cruesoe (Coktel Vision, 1987) to UKNC (Elektronika MS 0511
  * Видео [Robinson Crusoe Thomson TO8D](https://youtu.be/1qqb2sJRoGU)
  * Видео [[Amstrad CPC] Robinson Crusoe - Longplay
 ](https://youtu.be/6pIDTV3lXWI)
+
 
 ## Порт на УКНЦ
 
@@ -37,6 +39,7 @@ Porting game Robinson Cruesoe (Coktel Vision, 1987) to UKNC (Elektronika MS 0511
 
 `ROBIN.DAT` содежит сжатый заголовочный экран (~8К) и все семь уровней (экран + вставки + код + текст) (~130-140K). В файле всё выравниваем по границе блока, расположение описывается таблицей `LEVELS`.
 
+
 ## Инструменты
 
  * [Эмулятор RT-11](http://emulator.pdp-11.org.ru/RT-11/distr/) Дмитрия Патронова
@@ -45,6 +48,7 @@ Porting game Robinson Cruesoe (Coktel Vision, 1987) to UKNC (Elektronika MS 0511
  * [DaDither](https://www.dadither.com/) и ручная работа в [Paint.NET](https://www.getpaint.net/), чтобы адаптировать графику к 8-цветной палитре УКНЦ
  * [LZSA3](https://github.com/purplesyringa/lzsa3) для того, чтобы упаковать графику + декомпрессор от Ивана Городецкого
  * Для тестирования использовался эмулятор UKNCBTL
+
 
 ## Благодарности
 
