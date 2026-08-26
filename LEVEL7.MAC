@@ -1,4 +1,4 @@
-	BR	L1
+	BR	C0
 
 ; Проверка что файл прочитан в правильной кодировке
 .IIF NE <<'Ъ>-377> .ERROR
@@ -20,61 +20,68 @@ ESTRAT:	;	X    Y    W    H
 	.BYTE	19.,  0.,  9.,  8.	; 12.	13CC
 	.BYTE	28.,  0., 12., 11.	; 13.	16D0
 	.BYTE	14.,  0.,  5.,  7.	; 14.	1CE4
-	.WORD	177777
 
 ;------------------------------------------------------------------------------
 
 ; Действительно, там был корабль
-L1:
+C0:	; --- chunk 0  [0..48) ---
 	.PRMSG	#TEXT1
 	.WTKEY
 ;
 ; Человек был привязан к большой мачте,
-L2:	.PRMSG	#TEXT2
+	.PRMSG	#TEXT2
 	.WTSEL	#063
-	.WORD	L4, L7, L3
+	.WORD	L4		; 1. Я бросился к ним.
+	.WORD	L7		; 2. Я остался спрятанным.
+	.WORD	L3		; 3. Я вернулся, чтобы найти оружие.
 ;
 ; Мы вернулись, чтобы наблюдать корабль...
 L3:	ADD	#2, IARMS
 	.PRMSG	#TEXT3
 	.WTKEY
-	JMP	L7
+	JMP	C2
 ;
 ; Преодолевая свой страх, я бросился
+C1:	; --- chunk 1  [48..85) ---
 L4:	.PRMSG	#TEXT4
 	.WTKEY
 ;
 ; Я слишком поспешил, и меня поймали
-L5:	.PRMSG	#TEXT5
+	.PRMSG	#TEXT5
 	.WTKEY
 ;
 ; Робинзон умирает, убитый своими
-L6:	.PRMSG	#TEXT6
+	.PRMSG	#TEXT6
 	.WTKEY
 	CLR	ISCRAT
 	JMP	GAMEOVER
 ;
 ; Я дал Пятнице знак оставаться в укрытии.
+C2:	; --- chunk 2  [85..151) ---
 L7:	.PRMSG	#TEXT7
 	.WTKEY
 ;
 ; Шлюпка отправилась в море, направляясь
-L8:	.PRMSG	#TEXT8
+	.PRMSG	#TEXT8
 	.WTKEY
 ;
 ; Они высадили двух английских заключенных.
-L9:	.PRMSG	#TEXT9
+	.PRMSG	#TEXT9
 	.WTKEY
 ;
 ;  1: Я представился вождю бандитов.
-L10:	.PRMSG	#TEXT10
+	.PRMSG	#TEXT10
 	.WTSEL	#063
-	.WORD	L11, L17G, L35
+	.WORD	L11		; 1. Я представился вождю бандитов.
+	.WORD	L17G		; 2. Я попытался их освободить без шума.
+	.WORD	L35		; 3. Я остался в стороне.
 ;
 ; Я пригласил его посетить мой дом.
+C3:	; --- chunk 3  [151..239) ---
 L11:	.PRMSG	#TEXT11
 	.WTSEL	#062
-	.WORD	L12, L14
+	.WORD	L12		; 1. Но оставил Пятницу на улице.
+	.WORD	L14		; 2. Я подал ему напиток.
 ;
 ; К счастью, потому что он устроил
 L12:	.PRMSG	#TEXT12
@@ -97,7 +104,7 @@ L14:	.PRMSG	#TEXT14
 ; Но мы смогли сбежать через заднюю дверь.
 L15:	.PRMSG	#TEXT15
 	.WTKEY
-	JMP	L35
+	JMP	C10
 ;
 ; Робинзон и Пятница умерли, с оружием
 L16:	.PRMSG	#TEXT16
@@ -107,10 +114,11 @@ L16:	.PRMSG	#TEXT16
 ;
 L17G:	CMP	IFRGUN, #0
 	BGT	L18
-	JMP	L17
+	JMP	C4
 ;
 ; Мы их удивили, но Пятница не умел
-L17:	.PRMSG	#TEXT17
+C4:	; --- chunk 4  [239..293) ---
+	.PRMSG	#TEXT17
 	.WTKEY
 	CLR	ISCRAT
 	JMP	GAMEOVER
@@ -118,78 +126,89 @@ L17:	.PRMSG	#TEXT17
 ; Мы застали их врасплох, затем,
 L18:	.PRMSG	#TEXT18
 	.WTSEL	#062
-	.WORD	L19, L22
+	.WORD	L19		; 1. Я узнал настоящих виновных.
+	.WORD	L22		; 2. Мы убили всех мятежников.
 ;
 ; Таким образом, это был мятеж.
+C5:	; --- chunk 5  [293..336) ---
 L19:	.PRMSG	#TEXT19
 	.WTSEL	#063
-	.WORD	L24, L20, L21
+	.WORD	L24		; 1. Я предложил помощь капитану.
+	.WORD	L20		; 2. Я остался в стороне.
+	.WORD	L21		; 3. Я спросил мнение Пятницы.
 ;
 ; Робинзон и Пятница оставили офицеров.
 L20:	.PRMSG	#TEXT20
 	.WTKEY
-	JMP	L35
+	JMP	C10
 ;
 ; Он хотел сражаться рядом со мной
 L21:	.PRMSG	#TEXT21
 	.WTKEY
-	JMP	L24
+	JMP	C7
 ;
 ; К сожалению, шум взрывов предупредил
+C6:	; --- chunk 6  [336..375) ---
 L22:	.PRMSG	#TEXT22
 	.WTKEY
 ;
 ; Наша ситуация стала опасной.
-L23:	.PRMSG	#TEXT23
+	.PRMSG	#TEXT23
 	.WTKEY
 	CMP	ICREW, #1
 	BGT	L46
-	JMP	L31
+	JMP	C9
 ;
 ; Капитан с радостью принял наше
+C7:	; --- chunk 7  [375..436) ---
 L24:	.PRMSG	#TEXT24
 	.WTKEY
 	CMP	IARMS, #2
 	BLT	L25S
 ;
 ; Я вооружил наш маленький отряд.
-L25:	.PRMSG	#TEXT25
+	.PRMSG	#TEXT25
 	.WTKEY
 L25S:
 ; Капитан предложил выкупить двух матросов,
-L26:	.PRMSG	#TEXT26
+	.PRMSG	#TEXT26
 	.WTSEL	#062
-	.WORD	L27, L28
+	.WORD	L27		; 1. Я согласился.
+	.WORD	L28		; 2. Я отказался.
 ;
 ; Так что нас было семеро!
 L27:	.PRMSG	#TEXT27
 	.WTKEY
 	ADD	#1, ICREW
-	JMP	L29
+	JMP	C8
 ;
 ; Нас было пятеро!
 L28:	.PRMSG	#TEXT28
 	.WTKEY
-	JMP	L29
+	JMP	C8
 ;
 ; Еще один баркас высаживался!
-L29:	.PRMSG	#TEXT29
+C8:	; --- chunk 8  [436..472) ---
+	.PRMSG	#TEXT29
 	.WTKEY
 	ADD	#1, ICREW
 ;
 ;  1: Мы повели мятежников к центру
-L30:	.PRMSG	#TEXT30
+	.PRMSG	#TEXT30
 	.WTSEL	#062
-	.WORD	L37, L40
+	.WORD	L37		; 1. Мы повели мятежников к центру острова.
+	.WORD	L40		; 2. Мы атаковали всех, как только они достигли берега.
 ;
 ; Еще одна шлюпка приближалась!
-L31:	.PRMSG	#TEXT31
+C9:	; --- chunk 9  [472..527) ---
+	.PRMSG	#TEXT31
 	.WTKEY
 ;
 ;  1: Мы провели тех, кто находился
-L32:	.PRMSG	#TEXT32
+	.PRMSG	#TEXT32
 	.WTSEL	#062
-	.WORD	L37, L33
+	.WORD	L37		; 1. Мы провели тех, кто находился на второй шлюпке, в центр острова.
+	.WORD	L33		; 2. Мы совершили нападение в большом количестве.
 ;
 ; Мы были застигнуты врасплох теми, кто
 L33:	.PRMSG	#TEXT33
@@ -203,39 +222,43 @@ L34:	.PRMSG	#TEXT34
 	JMP	GAMEOVER
 ;
 ; Робинсон и Пятница оставались в тайне
+C10:	; --- chunk 10  [527..556) ---
 L35:	.PRMSG	#TEXT35
 	.WTKEY
 ;
 ; Они умерли от старости на своем острове.
-L36:	.PRMSG	#TEXT36
+	.PRMSG	#TEXT36
 	.WTKEY
 	CLR	ISCRAT
 	JMP	GAMEOVER
 ;
 ; Было легко подстеречь их поочередно
+C11:	; --- chunk 11  [556..605) ---
 L37:	.PRMSG	#TEXT37
 	.WTKEY
 ;
 ; Капитан сказал мне, кто из заключенных
-L38:	.PRMSG	#TEXT38
+	.PRMSG	#TEXT38
 	.WTKEY
 ;
 ;  1: Я предложил пощаду тем матросам,
-L39:	.PRMSG	#TEXT39
+	.PRMSG	#TEXT39
 	.WTSEL	#062
-	.WORD	L39A, L43
+	.WORD	L39A		; 1. Я предложил пощаду тем матросам, которых выбрали.
+	.WORD	L43		; 2. Будучи подозрительным, я отказал в пощаде всем матросам.
 ;
 L39A:	ADD	#1, ICREW
-	JMP	L43
+	JMP	C13
 ;
 ; Мы атаковали в полную силу.
+C12:	; --- chunk 12  [605..680) ---
 L40:	.PRMSG	#TEXT40
 	.WTKEY
 	CMP	ICREW, #1
 	BGT	L40C
 	JMP	L41
 L40C:	SUB	#1, ICREW
-	JMP	L22
+	JMP	C6
 ;
 ; Но их было слишком много...
 L41:	.PRMSG	#TEXT41
@@ -249,6 +272,7 @@ L42:	.PRMSG	#TEXT42
 	JMP	GAMEOVER
 ;
 ; С моей небольшой группой мы подождали
+C13:	; --- chunk 13  [680..731) ---
 L43:	.PRMSG	#TEXT43
 	.WTKEY
 	CMP	IARMS, #2
@@ -258,7 +282,7 @@ L43:	.PRMSG	#TEXT43
 ; С хорошей вооруженностью и используя
 L44:	.PRMSG	#TEXT44
 	.WTKEY
-	JMP	L50
+	JMP	C15
 ;
 ; Но мы были плохо вооружены, и наши шансы
 L45:	.PRMSG	#TEXT45
@@ -266,6 +290,7 @@ L45:	.PRMSG	#TEXT45
 	JMP	L58G
 ;
 ; Нам пришлось в спешке укрыться в моем замке.
+C14:	; --- chunk 14  [731..798) ---
 L46:	.PRMSG	#TEXT46
 	.WTKEY
 	CMP	ILADDR, #1
@@ -289,22 +314,24 @@ L49:	.PRMSG	#TEXT49
 	JMP	GAMEOVER
 ;
 ; Мы сели на вторую шлюпку вместе с нашими
-L50:	.PRMSG	#TEXT50
+C15:	; --- chunk 15  [798..831) ---
+	.PRMSG	#TEXT50
 	.WTKEY
 ;
 ; Атака была успешной. После ареста лидера
-L51:	.PRMSG	#TEXT51
+	.PRMSG	#TEXT51
 	.WTKEY
-	JMP	L55
+	JMP	C17
 ;
 L52G:	CMP	IARMS, #2
 	BLT	L53
-	JMP	L52
+	JMP	C16
 ;
 ; Вооружившись и отдохнув, мы атаковали
-L52:	.PRMSG	#TEXT52
+C16:	; --- chunk 16  [831..890) ---
+	.PRMSG	#TEXT52
 	.WTKEY
-	JMP	L43
+	JMP	C13
 ;
 ; Но, плохо вооруженные, мы вынуждены были
 L53:	.PRMSG	#TEXT53
@@ -318,7 +345,8 @@ L54:	.PRMSG	#TEXT54
 	JMP	GAMEOVER
 ;
 ; Мы высадили бунтовщиков на мой остров.
-L55:	.PRMSG	#TEXT55
+C17:	; --- chunk 17  [890..933) ---
+	.PRMSG	#TEXT55
 	.WTKEY
 	CMP	IMONEY, #1
 	BNE	L57
@@ -329,19 +357,20 @@ L55:	.PRMSG	#TEXT55
 ; Я захватил с собой свою шапку из кожи 
 L56:	.PRMSG	#TEXT56
 	.WTKEY
-	JMP	L60
+	JMP	C19
 ;
 ; Я взял свою шапку из кожи козы
 L57:	.PRMSG	#TEXT57
 	.WTKEY
-	JMP	L60
+	JMP	C19
 ;
 L58G:	CMP	ICREW, #2
 	BGT	L59
-	JMP	L58
+	JMP	C18
 ;
 ; Это был провал.
-L58:	.PRMSG	#TEXT58
+C18:	; --- chunk 18  [933..976) ---
+	.PRMSG	#TEXT58
 	.WTKEY
 	CLR	ISCRAT
 	JMP	GAMEOVER
@@ -349,29 +378,32 @@ L58:	.PRMSG	#TEXT58
 ; Тем не менее, мы добились успеха.
 L59:	.PRMSG	#TEXT59
 	.WTKEY
-	JMP	L50
+	JMP	C15
 ;
 ;  1: Я сказал Пятнице остаться на острове.
-L60:	.PRMSG	#TEXT60
+C19:	; --- chunk 19  [976..1016) ---
+	.PRMSG	#TEXT60
 	.WTSEL	#062
-	.WORD	L61, L62
+	.WORD	L61		; 1. Я сказал Пятнице остаться на острове.
+	.WORD	L62		; 2. Я хотел, чтобы Пятница пошел со мной.
 ;
 ; Я всегда сожалел о своем поступке,
 L61:	.PRMSG	#TEXT61
 	.WTKEY
-	JMP	L63
+	JMP	C20
 ;
 ; Он остался моим верным спутником
 L62:	.PRMSG	#TEXT62
 	.WTKEY
-	JMP	L63
+	JMP	C20
 ;
 ; Корабль отправился в путь, и я долго
-L63:	.PRMSG	#TEXT63
+C20:	; --- chunk 20  [1016..1057) ---
+	.PRMSG	#TEXT63
 	.WTKEY
 ;
 ; Прошло двадцать восемь лет, девять
-L64:	.PRMSG	#TEXT64
+	.PRMSG	#TEXT64
 	.WTKEY
 	JMP	L65G
 ;
@@ -379,10 +411,11 @@ L65G:	CMP	IMONEY, #1
 	BNE	L66
 	CMP	IRICHE, #1
 	BNE	L66
-	JMP	L65
+	JMP	C21
 ;
 ; Робинзон вернулся в Европу, где благодаря
-L65:	.PRMSG	#TEXT65
+C21:	; --- chunk 21  [1057..1092) ---
+	.PRMSG	#TEXT65
 	.WTKEY
 	JMP	TITLE
 ;
