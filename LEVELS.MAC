@@ -7,4 +7,4 @@ LEVELS:: ; ScrBlk, ScrSize, ExtBlk, ExtSize, CodeBlk, CodeSize
 	.WORD	127.,  3247.,   140.,  2816.,   151.,  3072.	; Level 4
 	.WORD	163.,  2496.,   173.,  2742.,   184.,  2560.	; Level 5
 	.WORD	194.,  3416.,   208.,  2370.,   218.,  2560.	; Level 6
-	.WORD	228.,  2214.,   237.,  2870.,   249.,  3584.	; Level 7
+	.WORD	228.,  2214.,   237.,  2870.,   249.,  3840.	; Level 7
