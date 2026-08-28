@@ -20,19 +20,20 @@ echo LEVELS:: .BLKW 42. >> LEVELS.MAC
 set /a scrno = 1
 :loopscrno
 if "%scrno%" == "8" goto loopend
-  echo LEVEL %scrno%
+  REM echo LEVEL %scrno%
   copy /b LEVEL%scrno%.MAC LEVEL.MAC >NUL
   REM %rt11exe% MACRO/LIST:DK:ROBIN%scrno% ROBIN.MAC /OBJECT:ROBIN%scrno%
   tools\macro11.exe ROBIN.MAC -l ROBIN%scrno%.lst -o ROBIN%scrno%.obj -rt11 -se -m SYSMAC.SML
   if not errorlevel 1 (
+    findstr /RC:"^[ABDEILMNOPQRTUZ\*] " ROBIN%scrno%.lst
     echo LEVEL %scrno% COMPILED SUCCESSFULLY
   ) ELSE (
-    findstr /RC:"^[ABDEILMNOPQRTUZ] " ROBIN%scrno%.lst
+    findstr /RC:"^[ABDEILMNOPQRTUZ\*] " ROBIN%scrno%.lst
     echo ======= %errdet% =======
     goto :Failed
   )
   del LEVEL.MAC
-  tools\pclink11.exe ROBIN%scrno%.OBJ /MAP /VERBOSITY:1
+  tools\pclink11.exe ROBIN%scrno%.OBJ /MAP /VERBOSITY:1 >xlink.log
   if errorlevel 1 (
     echo ======= LINK FAILED =======
     goto :Failed
@@ -48,6 +49,8 @@ if "%scrno%" == "8" goto loopend
   set /a scrno += 1
 goto loopscrno
 :loopend
+
+@if exist xlink.log del xlink.log
 
 .\PrepareRobinDat\bin\Debug\net7.0\PrepareRobinDat.exe
 

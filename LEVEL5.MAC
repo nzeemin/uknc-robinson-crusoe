@@ -141,10 +141,17 @@ L16B:	MOV	#1, IWATCH
 C7:	; --- chunk 7  [274..369) ---
 L17:	.PRMSG	#TEXT17
 	.SHEXT	12.,30.,5.
-;TODO: loop draws atlas10 fixed + atlas3/atlas4 alt, 3 sprites per iter, no .ANIM fit
+; Цикл x5: каннибалы у костра, пляска смерти
+	MOV	#5., R5
+1$:	.SHEXT	10.,12.,12.
+	.SHEXT	3.,20.,3.
+	.WTIME	15.
+	.SHEXT	4.,20.,3.
+	.WTIME	15.
+	SOB	R5, 1$
 	.WTKEY
 	TST	IWATCH
-	BEQ	L18
+	BNE	L18
 	CMP	IPEPIN, #1
 	BEQ	L18
 	JMP	L19
@@ -202,7 +209,13 @@ L24:	.PRMSG	#TEXT24
 ; Я убил одного дикаря!
 L26:	.PRMSG	#TEXT26
 	.WTKEY
-	.ANIM	2.,6., 35.,10., 30
+; Цикл x8: дикарь падает
+	MOV	#8., R5
+1$:	.SHEXT	2., 35.,10.
+	.WTIME	15.
+	.SHEXT	6., 35.,10.
+	.WTIME	15.
+	SOB	R5, 1$
 ;
 	.SHEXT	14.,20.,3.
 ; Остальные бежали к своим шлюпкам.
@@ -212,7 +225,8 @@ L26:	.PRMSG	#TEXT26
 ;
 ; Затем, раскаиваясь в своем недоверии, я вернулся искать его.
 C11:	; --- chunk 11  [514..527) ---
-L28:	.PRMSG	#TEXT28
+L28:	.FRAGM	35.,10.,5.,10.		; пленник оставлен на пляже
+	.PRMSG	#TEXT28
 	.WTKEY
 	JMP	C13
 ;
@@ -222,7 +236,6 @@ L29:	.PRMSG	#TEXT29
 	.WTSEL	#062
 	.WORD	L30		; 1. Мы оба вернулись в пещеру.
 	.WORD	L28		; 2. Я оставил пленника на пляже.
-;TODO: option2 needs erase FRAGM 35.,10.,5.,10. before reaching shared L28 -- needs own trampoline
 ;
 ; Я окрестил своего нового спутника Пятницей
 C13:	; --- chunk 13  [546..559) ---
@@ -237,7 +250,13 @@ C14:	; --- chunk 14  [559..622) ---
 	.PRMSG	#TEXT31
 	.WTKEY
 	.FRAGM	26.,10.,8.,10.
-	.ANIM	7.,8., 29.,10., 30
+; Цикл x6: пленник благодарит
+	MOV	#6., R5
+1$:	.SHEXT	7., 29.,10.
+	.WTIME	20.
+	.SHEXT	8., 29.,10.
+	.WTIME	20.
+	SOB	R5, 1$
 ;
 ; Выбор: выстрелить в воздух, опустить ружьё
 	.PRMSG	#TEXT32
@@ -247,8 +266,15 @@ C14:	; --- chunk 14  [559..622) ---
 ;
 ; Испуганный мушкетом, дикарь убежал.
 C15:	; --- chunk 15  [622..683) ---
-;TODO: bytecode chunk14 IFOPT1 (raise gun) loop ANIM 2.,6., 35.,10. not implemented -- fires only on option1 of previous choice, needs trampoline
-L33:	.PRMSG	#TEXT33
+L33:
+; Цикл x10: выстрел в воздух
+	MOV	#10., R5
+1$:	.SHEXT	2.,35.,10.
+	.WTIME	10.
+	.SHEXT	6.,35.,10.
+	.WTIME	10.
+	SOB	R5, 1$
+	.PRMSG	#TEXT33
 	.WTKEY
 ;
 ; Выбор: оставить его, искать убить, искать связать, искать без оружия

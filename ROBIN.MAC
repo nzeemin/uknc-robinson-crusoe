@@ -984,13 +984,13 @@ ICREW  = IVARS+<36*2>			; L2 счёт характеристик / L7 разме
 ; параметры N,M = номера вставок
 ; параметры X,Y = координаты на экране
 ; параметр T = величина задержки
-.MACRO	.ANIM	N, M, X, Y, T
-	MOV	#<N>, R0
-	MOV	#<M>, R1
-	MOV	#<<Y>*400+<X>>, R2
-	MOV	#<T>, R3
-	CALL	ANIMAT
-.ENDM
+; .MACRO	.ANIM	N, M, X, Y, T
+; 	MOV	#<N>, R0
+; 	MOV	#<M>, R1
+; 	MOV	#<<Y>*400+<X>>, R2
+; 	MOV	#<T>, R3
+; 	CALL	ANIMAT
+; .ENDM
 
 ; Переход на другой уровень; N = 1..7
 .MACRO	.LEVEL	N

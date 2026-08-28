@@ -145,7 +145,17 @@ C8:	; --- chunk 8  [266..319) ---
 	.PRMSG	#TEXT14
 	.SHEXT	8.,30.,1.
 	.WTKEY
-;TODO: loop draws 2 sprite-pairs alternating (atlas9+11 vs atlas10+12), no .ANIM fit
+; Цикл x10: Пятница ест, лицо и рука
+	MOV	#10., R5
+1$:	.SHEXT	9., 32.,6.
+	.WTIME	10.
+	.SHEXT	11., 33.,8.
+	.WTIME	7.
+	.SHEXT	10., 32.,6.
+	.WTIME	10.
+	.SHEXT	12., 33.,8.
+	.WTIME	12.
+	SOB	R5, 1$
 ;
 ;  1: Я накормил его, чтобы он набрал вес.
 	.PRMSG	#TEXT15
@@ -184,7 +194,7 @@ C10:	; --- chunk 10  [369..432) ---
 L19:	.PRMSG	#TEXT19
 	.WTKEY
 	CMP	ITRUST, #0
-	BLE	L21
+	BLT	L21
 	CMP	IFRTLK, #1
 	BNE	L21
 	JMP	L20
@@ -311,7 +321,15 @@ L35:	.PRMSG	#TEXT35
 C19:	; --- chunk 19  [687..725) ---
 	.PRMSG	#TEXT37
 	.SHEXT	8.,30.,1.
-;TODO: loop draws 2 sprite-pairs alternating (atlas9+11 vs atlas10+12), no .ANIM fit
+; Цикл x10: Пятница взволнован, лицо и рука
+	MOV	#10., R5
+1$:	.SHEXT	9., 32.,6.
+	.SHEXT	11., 33.,8.
+	.WTIME	10.
+	.SHEXT	10., 32.,6.
+	.SHEXT	12., 33.,8.
+	.WTIME	10.
+	SOB	R5, 1$
 	.WTKEY
 	.LEVEL	7
 ;
