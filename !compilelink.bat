@@ -27,7 +27,7 @@ if "%scrno%" == "8" goto loopend
   if not errorlevel 1 (
     echo LEVEL %scrno% COMPILED SUCCESSFULLY
   ) ELSE (
-    findstr /RC:"^[ABDEILMNOPQRTUZ] " S1COMM.lst
+    findstr /RC:"^[ABDEILMNOPQRTUZ] " ROBIN%scrno%.lst
     echo ======= %errdet% =======
     goto :Failed
   )
@@ -56,7 +56,7 @@ tools\macro11.exe ROBIN.MAC -l ROBIN.lst -o ROBIN.obj -rt11 -se -m SYSMAC.SML
 if not errorlevel 1 (
   echo ROBIN COMPILED SUCCESSFULLY
 ) ELSE (
-  findstr /RC:"^[ABDEILMNOPQRTUZ] " S1COMM.lst
+  findstr /RC:"^[ABDEILMNOPQRTUZ] " ROBIN.lst
   echo ======= %errdet% =======
   goto :Failed
 )

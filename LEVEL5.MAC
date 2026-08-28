@@ -162,8 +162,8 @@ L19:	.PRMSG	#TEXT19
 ; У них были живые пленники под их властью.
 C8:	; --- chunk 8  [369..401) ---
 	.PRMSG	#TEXT20
-	.WTKEY
 	.SHEXT	5.,7.,8.
+	.WTKEY
 ;
 ; Дикари исполняли танец смерти. Выбор: ждать момента, вмешаться сразу, убежать
 	.PRMSG	#TEXT21
@@ -180,7 +180,8 @@ L22:	.PRMSG	#TEXT22
 ;
 ; К несчастью, первый пленник погиб. Второй ринулся в последнюю попытку бегства
 C10:	; --- chunk 10  [418..514) ---
-L23:	.PRMSG	#TEXT23
+L23:	.SHEXT	2.,35.,10.
+	.PRMSG	#TEXT23
 	.WTKEY
 	.FRAGM	7.,8.,12.,3.
 	.SHEXT	1.,12.,12.
@@ -246,7 +247,7 @@ C14:	; --- chunk 14  [559..622) ---
 ;
 ; Испуганный мушкетом, дикарь убежал.
 C15:	; --- chunk 15  [622..683) ---
-;TODO: bytecode chunk14 IFOPT (raise gun) loop ANIM 2.,6.,35.,10. and final SHEXT 13.,26.,10. -- chunk/port boundary mismatch, verify placement
+;TODO: bytecode chunk14 IFOPT1 (raise gun) loop ANIM 2.,6., 35.,10. not implemented -- fires only on option1 of previous choice, needs trampoline
 L33:	.PRMSG	#TEXT33
 	.WTKEY
 ;
@@ -256,27 +257,35 @@ L33:	.PRMSG	#TEXT33
 	.WORD	L35		; 1. Я оставил его на произвол судьбы.
 	.WORD	L36		; 2. Я искал его, чтобы убить.
 	.WORD	L37		; 3. Я искал его, чтобы связать.
-	.WORD	L38		; 4. Я бросил оружие, чтобы отправиться на его поиски.
+	.WORD	L38T		; 4. Я бросил оружие, чтобы отправиться на его поиски.
 ;
 ; Он исчез.
 L35:	.PRMSG	#TEXT35
 	.WTKEY
+	.SHEXT	13.,26.,10.
 	JMP	C17
 ;
 ; Но он был ловким.
 L36:	.PRMSG	#TEXT36
 	.WTKEY
+	.SHEXT	13.,26.,10.
 	JMP	C17
 ;
 ; И я привязал его к дереву.
 L37:	.PRMSG	#TEXT37
 	.WTKEY
+	.SHEXT	13.,26.,10.
 	JMP	C17
+;
+L38T:	.SHEXT	13.,26.,10.
+	JMP	L38
 ;
 ; Он встал на колени, чтобы поблагодарить меня.
 ; Выбор: освободить, привязать, дать пить и есть
 C16:	; --- chunk 16  [683..726) ---
-L38:	.PRMSG	#TEXT38
+L38:	.FRAGM	26.,10.,8.,10.
+	.SHEXT	7.,29.,10.
+	.PRMSG	#TEXT38
 	.WTSEL	#063
 	.WORD	L39		; 1. Я вернул ему свободу.
 	.WORD	L40		; 2. Я привязал его к дереву.
