@@ -145,9 +145,9 @@ L17:	.PRMSG	#TEXT17
 	MOV	#5., R5
 1$:	.SHEXT	10.,12.,12.
 	.SHEXT	3.,20.,3.
-	.WTIME	15.
+	.WTIME	19.
 	.SHEXT	4.,20.,3.
-	.WTIME	15.
+	.WTIME	19.
 	SOB	R5, 1$
 	.WTKEY
 	TST	IWATCH
@@ -212,9 +212,9 @@ L26:	.PRMSG	#TEXT26
 ; Цикл x8: дикарь падает
 	MOV	#8., R5
 1$:	.SHEXT	2., 35.,10.
-	.WTIME	15.
+	.WTIME	19.
 	.SHEXT	6., 35.,10.
-	.WTIME	15.
+	.WTIME	19.
 	SOB	R5, 1$
 ;
 	.SHEXT	14.,20.,3.
@@ -253,9 +253,9 @@ C14:	; --- chunk 14  [559..622) ---
 ; Цикл x6: пленник благодарит
 	MOV	#6., R5
 1$:	.SHEXT	7., 29.,10.
-	.WTIME	20.
+	.WTIME	25.
 	.SHEXT	8., 29.,10.
-	.WTIME	20.
+	.WTIME	25.
 	SOB	R5, 1$
 ;
 ; Выбор: выстрелить в воздух, опустить ружьё
@@ -270,9 +270,9 @@ L33:
 ; Цикл x10: выстрел в воздух
 	MOV	#10., R5
 1$:	.SHEXT	2.,35.,10.
-	.WTIME	10.
+	.WTIME	13.
 	.SHEXT	6.,35.,10.
-	.WTIME	10.
+	.WTIME	13.
 	SOB	R5, 1$
 	.PRMSG	#TEXT33
 	.WTKEY
@@ -367,7 +367,7 @@ L45:	.PRMSG	#TEXT45
 ;
 ; С помощью своих мушкетов, я смог вмешаться.
 L47G:	CMP	IARMS, #0
-	BGE	L47
+	BGT	L47
 	JMP	L48
 C22:	; --- chunk 22  [822..857) ---
 L47:	.PRMSG	#TEXT47

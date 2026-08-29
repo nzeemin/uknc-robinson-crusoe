@@ -148,13 +148,13 @@ C8:	; --- chunk 8  [266..319) ---
 ; Цикл x10: Пятница ест, лицо и рука
 	MOV	#10., R5
 1$:	.SHEXT	9., 32.,6.
-	.WTIME	10.
+	.WTIME	13.
 	.SHEXT	11., 33.,8.
-	.WTIME	7.
+	.WTIME	9.
 	.SHEXT	10., 32.,6.
-	.WTIME	10.
+	.WTIME	13.
 	.SHEXT	12., 33.,8.
-	.WTIME	12.
+	.WTIME	15.
 	SOB	R5, 1$
 ;
 ;  1: Я накормил его, чтобы он набрал вес.
@@ -325,10 +325,10 @@ C19:	; --- chunk 19  [687..725) ---
 	MOV	#10., R5
 1$:	.SHEXT	9., 32.,6.
 	.SHEXT	11., 33.,8.
-	.WTIME	10.
+	.WTIME	13.
 	.SHEXT	10., 32.,6.
 	.SHEXT	12., 33.,8.
-	.WTIME	10.
+	.WTIME	13.
 	SOB	R5, 1$
 	.WTKEY
 	.LEVEL	7
